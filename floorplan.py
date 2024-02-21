@@ -118,7 +118,7 @@ button.pack()
 
 # add events to make graphic appear of the specified room along with the inventory data   
 
-# updated name
+# email update
 
 root.mainloop()
  
