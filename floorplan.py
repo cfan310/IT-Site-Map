@@ -121,3 +121,4 @@ button.pack()
  
 root.mainloop()
  
+ # added list of dictionairies to loop thru and add clicking event handling
