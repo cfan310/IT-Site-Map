@@ -114,7 +114,7 @@ button.pack()
 '''
 
 
-
+# iterate thru all dictionairies
 
 # add events to make graphic appear of the specified room along with the inventory data   
 
