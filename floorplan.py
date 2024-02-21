@@ -118,7 +118,8 @@ button.pack()
 
 # add events to make graphic appear of the specified room along with the inventory data   
 
- 
+# updated name
+
 root.mainloop()
  
  # added list of dictionairies to loop thru and add clicking event handling
