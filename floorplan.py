@@ -95,6 +95,10 @@ lab1224button.pack()
 lab1225button = Button(root, text="Lab 1225", command=show_text) # command is a click event that activates the show_text function
 lab1225button.pack() 
  
+# lab 1226
+ 
+lab1226button = Button(root, text="Lab 1226")
+lab1226button.pack()  
  
  # create buttons for 1208, 1224, and 1225. Upon click, we open a new window with details  
 
