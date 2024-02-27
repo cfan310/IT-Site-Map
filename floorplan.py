@@ -155,12 +155,37 @@ inner_canvas_3.pack(side='right')
 # ... and so on for inner_canvas_3 and inner_canvas_4
 
 
+
+
+
+#button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
+#button3.pack(side="top", padx=10, pady=10)  # Adjust position with options
+
+# now add functionaity to click the button and trigger the opening of a NEW POPUP WINDOW
+def open_popup(): 
+    # create new window for the popup 
+    popup_window = Tk() 
+    popup_window.title("Room 1208 Inventory") 
+    popup_window.geometry("300x200") 
+
+    # add content to the popup window 
+    label = Label(popup_window, text="Lab 1208 data goes here") 
+    label.pack() 
+
+    # Add a button to close the popup window 
+    close_button = Button(popup_window, text="Close", command=popup_window.destroy)
+    close_button.pack()    
+
+    popup_window.mainloop() 
+
 # Create buttons positioned within main_canvas
-button1 = Button(inner_canvas_1, text="Lab 1208", width=10)
+button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=open_popup)
 button1.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
 button2 = Button(inner_canvas_2, text="Lab 1224", width=10)
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
-root.mainloop()  
+
+
+root.mainloop() 
 '''
