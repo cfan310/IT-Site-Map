@@ -62,7 +62,7 @@ for dictionary in dictList:
     formatted_text_floor_12 += f"{key}: {value}\n"
 
 
- 
+  
 # INSERTS TEXT AS A SINGLE TEXT OBJECT WITH FORMATTING 
 
 text_widget = Text(canvas, font=("Arial", 12), bg="lightgray") 
@@ -114,9 +114,9 @@ def formatDictData():
 
 
 button = Button(root, text="Lab 1225", command=formatDictData())
-button.pack()
+button.pack()  
 '''
-
+# to do: 
 
 # iterate thru all dictionairies
 
@@ -125,5 +125,9 @@ button.pack()
 # email update
 
 root.mainloop()
- 
- # added list of dictionairies to loop thru and add clicking event handling
+
+
+inner_canvas_1 = Canvas(main_canvas, width=100, height=100, bg='orange') 
+inner_canvas_1.pack(side='right')
+inner_canvas_2 = Canvas(main_canvas, width=100, height=100, bg='pink') 
+inner_canvas_2.pack(side='right')
