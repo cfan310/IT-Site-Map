@@ -131,3 +131,36 @@ inner_canvas_1 = Canvas(main_canvas, width=100, height=100, bg='orange')
 inner_canvas_1.pack(side='right')
 inner_canvas_2 = Canvas(main_canvas, width=100, height=100, bg='pink') 
 inner_canvas_2.pack(side='right')
+
+''' Better logic for the root and canvas windows / buttons
+
+from tkinter import *
+
+root = Tk()
+root.title("Marcy Lane - Floor 21")
+root.maxsize(1000, 1000)
+root.config(bg="green")
+
+# Create the main canvas
+#main_canvas = Canvas(root, width=500, height=500, bg='gray')
+#main_canvas.pack()
+
+# Create inner canvases (already positioned correctly using pack)
+inner_canvas_1 = Canvas(root, width=100, height=100, bg='orange')
+inner_canvas_1.pack(side='top')
+inner_canvas_2 = Canvas(inner_canvas_1, width=100, height=100, bg='pink')
+inner_canvas_2.pack(side='right')
+inner_canvas_3 = Canvas(inner_canvas_2, width=100, height=100, bg='blue')
+inner_canvas_3.pack(side='right')
+# ... and so on for inner_canvas_3 and inner_canvas_4
+
+
+# Create buttons positioned within main_canvas
+button1 = Button(inner_canvas_1, text="Lab 1208", width=10)
+button1.pack(side="top", padx=10, pady=10)  # Adjust position with options
+
+button2 = Button(inner_canvas_2, text="Lab 1224", width=10)
+button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
+
+root.mainloop()  
+'''
