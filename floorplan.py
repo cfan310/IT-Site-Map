@@ -145,6 +145,16 @@ root.config(bg="green")
 #main_canvas = Canvas(root, width=500, height=500, bg='gray')
 #main_canvas.pack()
 
+
+lab1208data = {
+  "computer model": 790,
+  "number of computers": 16,
+  "printer model": "HP M602",
+  "number of printers": 1,
+  "projector model": "Dell 1510x",
+  "number of projectors": 1
+}
+
 # Create inner canvases (already positioned correctly using pack)
 inner_canvas_1 = Canvas(root, width=100, height=100, bg='orange')
 inner_canvas_1.pack(side='top')
@@ -153,7 +163,6 @@ inner_canvas_2.pack(side='right')
 inner_canvas_3 = Canvas(inner_canvas_2, width=100, height=100, bg='blue')
 inner_canvas_3.pack(side='right')
 # ... and so on for inner_canvas_3 and inner_canvas_4
-
 
 
 
@@ -169,7 +178,7 @@ def open_popup():
     popup_window.geometry("300x200") 
 
     # add content to the popup window 
-    label = Label(popup_window, text="Lab 1208 data goes here") 
+    label = Label(popup_window, text=insertLab1208Data()) 
     label.pack() 
 
     # Add a button to close the popup window 
@@ -177,6 +186,21 @@ def open_popup():
     close_button.pack()    
 
     popup_window.mainloop() 
+
+def insertLab1208Data():
+# create a label
+    lab1208dataGUI = Label(popup_window, text="Key-Value Pairs")  
+    lab1208dataGUI.pack()     
+    # create a listbox 
+    listbox = Listbox(popup_window)
+    listbox.pack(fill="both", expand=True)        
+    # Add key-value pairs to the listbox  
+    for key, value in lab1208data.items():
+        listbox.insert("end", f"{key}: {value}") 
+
+
+         
+
 
 # Create buttons positioned within main_canvas
 button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=open_popup)
@@ -186,6 +210,5 @@ button2 = Button(inner_canvas_2, text="Lab 1224", width=10)
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
 
-
-root.mainloop() 
+root.mainloop()   
 '''
