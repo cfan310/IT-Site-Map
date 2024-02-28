@@ -163,8 +163,7 @@ inner_canvas_2.pack(side='right')
 inner_canvas_3 = Canvas(inner_canvas_2, width=100, height=100, bg='blue')
 inner_canvas_3.pack(side='right')
 # ... and so on for inner_canvas_3 and inner_canvas_4
-
-
+ 
 
 
 #button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
@@ -177,6 +176,18 @@ def open_popup():
     popup_window.title("Room 1208 Inventory") 
     popup_window.geometry("300x200") 
 
+    def insertLab1208Data():
+        # create a label
+        lab1208dataGUI = Label(popup_window, text="Key-Value Pairs")  
+        lab1208dataGUI.pack()     
+        # create a listbox 
+        listbox = Listbox(popup_window)
+        listbox.pack(fill="both", expand=True)        
+        # Add key-value pairs to the listbox  
+        for key, value in lab1208data.items():
+            listbox.insert("end", f"{key}:     {value}") 
+
+
     # add content to the popup window 
     label = Label(popup_window, text=insertLab1208Data()) 
     label.pack() 
@@ -187,19 +198,7 @@ def open_popup():
 
     popup_window.mainloop() 
 
-def insertLab1208Data():
-# create a label
-    lab1208dataGUI = Label(popup_window, text="Key-Value Pairs")  
-    lab1208dataGUI.pack()     
-    # create a listbox 
-    listbox = Listbox(popup_window)
-    listbox.pack(fill="both", expand=True)        
-    # Add key-value pairs to the listbox  
-    for key, value in lab1208data.items():
-        listbox.insert("end", f"{key}: {value}") 
 
-
-         
 
 
 # Create buttons positioned within main_canvas
@@ -210,5 +209,5 @@ button2 = Button(inner_canvas_2, text="Lab 1224", width=10)
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
 
-root.mainloop()   
+root.mainloop()      
 '''
