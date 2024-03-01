@@ -131,6 +131,8 @@ inner_canvas_1 = Canvas(main_canvas, width=100, height=100, bg='orange')
 inner_canvas_1.pack(side='right')
 inner_canvas_2 = Canvas(main_canvas, width=100, height=100, bg='pink') 
 inner_canvas_2.pack(side='right')
+inner_canvas_3 = Canvas(main_canvas, width=100, height=100, bg='pink') 
+inner_canvas_3.pack(side='right')
 
 ''' Better logic for the root and canvas windows / buttons
 
@@ -208,6 +210,6 @@ button1.pack(side="top", padx=10, pady=10)  # Adjust position with options
 button2 = Button(inner_canvas_2, text="Lab 1224", width=10)
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
-
+ 
 root.mainloop()      
 '''
