@@ -216,6 +216,17 @@ def open_popup(labDictionary):
             popup_window.title("Lab 1225 Inventory") 
             popup_window.geometry("500x250") 
 
+    # ^ simplified version
+
+    # list of Lab Dicts 
+    labDicts = [lab1208data, lab1224data, lab1225data]
+    labDictNames = ["Lab 1208 Inventory", "Lab 1224 Inventory", "Lab 1225 Inventory"]
+    for labDictName in labDictNames:
+            # create new window for the popup 
+            popup_window = Tk() 
+            popup_window.title(f"{labDictName} Inventory") 
+            popup_window.geometry("500x250")
+
 
     def insertLabData(labDictionary):
         # create a label
