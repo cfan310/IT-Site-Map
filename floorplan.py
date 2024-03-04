@@ -136,6 +136,7 @@ inner_canvas_3.pack(side='right')
 
 ''' Better logic for the root and canvas windows / buttons
 
+
 from tkinter import *
 
 root = Tk()
@@ -157,6 +158,24 @@ lab1208data = {
   "number of projectors": 1
 }
 
+lab1224data = {
+  "computer model": 7040/20,
+  "number of computers": 26,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x", 
+  "number of projectors": 1
+}
+# when 1225 button is clicked, the following data will appear inside the canvas box
+lab1225data = {
+  "computer model": 7040,  
+  "number of computers": 29,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x",
+  "number of projectors": 1        
+}
+
 # Create inner canvases (already positioned correctly using pack)
 inner_canvas_1 = Canvas(root, width=100, height=100, bg='orange')
 inner_canvas_1.pack(side='top')
@@ -168,10 +187,15 @@ inner_canvas_3.pack(side='right')
  
 
 
-#button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
-#button3.pack(side="top", padx=10, pady=10)  # Adjust position with options
+button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
+button3.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
 # now add functionaity to click the button and trigger the opening of a NEW POPUP WINDOW
+
+# list of Lab Dicts 
+labDicts = [lab1208data] 
+
+
 def open_popup(): 
     # create new window for the popup 
     popup_window = Tk() 
@@ -186,11 +210,12 @@ def open_popup():
         listbox = Listbox(popup_window)
         listbox.pack(fill="both", expand=True)        
         # Add key-value pairs to the listbox  
+
         for key, value in lab1208data.items():
             listbox.insert("end", f"{key}:     {value}") 
 
 
-    # add content to the popup window 
+    # add content to the popup window  
     label = Label(popup_window, text=insertLab1208Data()) 
     label.pack() 
 
@@ -198,9 +223,8 @@ def open_popup():
     close_button = Button(popup_window, text="Close", command=popup_window.destroy)
     close_button.pack()    
 
-    popup_window.mainloop() 
-
-
+    popup_window.mainloop()  
+ 
 
 
 # Create buttons positioned within main_canvas
@@ -210,6 +234,15 @@ button1.pack(side="top", padx=10, pady=10)  # Adjust position with options
 button2 = Button(inner_canvas_2, text="Lab 1224", width=10)
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
- 
-root.mainloop()      
+button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
+
+
+root.mainloop()         
+  
+ # copy excel files to local computer and create a simple MySQL database 
+ # then implement the data feed functionality in Python  
+ # then add complexity
+
+
+ # Close button does not currently appear unless window length is increased 
 '''
