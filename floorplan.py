@@ -186,37 +186,52 @@ inner_canvas_3.pack(side='right')
 # ... and so on for inner_canvas_3 and inner_canvas_4
  
 
-
+'''
 button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
 button3.pack(side="top", padx=10, pady=10)  # Adjust position with options
-
+'''
 # now add functionaity to click the button and trigger the opening of a NEW POPUP WINDOW
 
-# list of Lab Dicts 
-labDicts = [lab1208data] 
+
+def open_popup(labDictionary): 
+    
+    # list of Lab Dicts 
+    labDicts = [lab1208data, lab1224data, lab1225data]
+    # iterate through lists and then insert
+    for labDict in labDicts:
+        if labDict == lab1208data:
+            # create new window for the popup 
+            popup_window = Tk() 
+            popup_window.title("Lab 1208 Inventory") 
+            popup_window.geometry("500x250") 
+        elif:
+            labDict == lab1224data:
+            # create new window for the popup 
+            popup_window = Tk() 
+            popup_window.title("Lab 1224 Inventory") 
+            popup_window.geometry("500x250") 
+        else:
+            # create new window for the popup 
+            popup_window = Tk() 
+            popup_window.title("Lab 1225 Inventory") 
+            popup_window.geometry("500x250") 
 
 
-def open_popup(): 
-    # create new window for the popup 
-    popup_window = Tk() 
-    popup_window.title("Room 1208 Inventory") 
-    popup_window.geometry("300x200") 
-
-    def insertLab1208Data():
+    def insertLabData(labDictionary):
         # create a label
-        lab1208dataGUI = Label(popup_window, text="Key-Value Pairs")  
-        lab1208dataGUI.pack()     
+        labDataGUI = Label(popup_window, text="Key-Value Pairs")  
+        labDataGUI.pack()     
         # create a listbox 
         listbox = Listbox(popup_window)
         listbox.pack(fill="both", expand=True)        
         # Add key-value pairs to the listbox  
 
-        for key, value in lab1208data.items():
-            listbox.insert("end", f"{key}:     {value}") 
+        for key, value in labDictionary.items():
+        listbox.insert("end", f"{key}:     {value}") 
 
 
     # add content to the popup window  
-    label = Label(popup_window, text=insertLab1208Data()) 
+    label = Label(popup_window, text=insertLabData()) 
     label.pack() 
 
     # Add a button to close the popup window 
@@ -224,25 +239,19 @@ def open_popup():
     close_button.pack()    
 
     popup_window.mainloop()  
- 
+  
 
 
 # Create buttons positioned within main_canvas
-button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=open_popup)
+button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=open_popup(lab1208data))
 button1.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
-button2 = Button(inner_canvas_2, text="Lab 1224", width=10)
+button2 = Button(inner_canvas_2, text="Lab 1224", width=10, command=open_popup(lab1224data))
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
-button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
+button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=open_popup(lab1225data))
+button.pack()
 
 
-root.mainloop()         
-  
- # copy excel files to local computer and create a simple MySQL database 
- # then implement the data feed functionality in Python  
- # then add complexity
-
-
- # Close button does not currently appear unless window length is increased 
+root.mainloop()    
 '''
