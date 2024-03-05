@@ -264,5 +264,9 @@ button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=open_popup(l
 button.pack()
 
 
+
+# creating MySQL table to store Inventory data
+
+
 root.mainloop()    
 '''
