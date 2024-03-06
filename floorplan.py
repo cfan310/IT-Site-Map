@@ -198,7 +198,7 @@ def open_popup(labDictionary):
     # list of Lab Dicts 
     labDicts = [lab1208data, lab1224data, lab1225data]
     # iterate through lists and then insert
-    for labDict in labDicts:
+    for labDictName in labDicts:
         if labDict == lab1208data:
             # create new window for the popup 
             popup_window = Tk() 
@@ -262,11 +262,6 @@ button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
 button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=open_popup(lab1225data))
 button.pack()
-
-
-
-# creating MySQL table to store Inventory data
-
 
 root.mainloop()    
 '''
