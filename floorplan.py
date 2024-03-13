@@ -33,6 +33,14 @@ lab1225data = {
   "projector model": "Dell 1510x",
   "number of projectors": 1        
 }
+lab1229dta = {
+ "computer model": 7070,  
+  "number of computers": 10,
+  "printer model": "Toshiba",
+  "number of printers": 1 
+}
+
+
 x_pos = 20  # width
 y_pos = 10  # height
 line_spacing = 20
@@ -123,7 +131,7 @@ button.pack()
 # add events to make graphic appear of the specified room along with the inventory data   
 
 # email update
-
+# 
 root.mainloop()
 
 
@@ -190,8 +198,6 @@ inner_canvas_3.pack(side='right')
 button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
 button3.pack(side="top", padx=10, pady=10)  # Adjust position with options
 '''
-# now add functionaity to click the button and trigger the opening of a NEW POPUP WINDOW
-
 
 def open_popup(labDictionary): 
     
@@ -261,7 +267,7 @@ button2 = Button(inner_canvas_2, text="Lab 1224", width=10, command=open_popup(l
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
 button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=open_popup(lab1225data))
-button.pack()
+button.pack() 
 
 root.mainloop()    
-'''
+''' 
