@@ -145,7 +145,9 @@ inner_canvas_3.pack(side='right')
 ''' Better logic for the root and canvas windows / buttons
 
 
-from tkinter import *
+
+
+
 from tkinter import *
 
 root = Tk()
@@ -203,82 +205,36 @@ button3.pack(side="top", padx=10, pady=10)  # Adjust position with options
 '''    
 
 def open_popup(labDictionary): 
-    '''
-    # list of Lab Dicts 
-    labDicts = [lab1208data, lab1224data, lab1225data]
-    # iterate through lists and then insert
-    for labDict in labDicts:
-        if labDict == lab1208data:
-            # create new window for the popup 
-            popup_window = Tk() 
-            popup_window.title("Lab 1208 Inventory") 
-            popup_window.geometry("500x250") 
-        elif: labDict == lab1224data:
-            # create new window for the popup 
-            popup_window = Tk() 
-            popup_window.title("Lab 1224 Inventory") 
-            popup_window.geometry("500x250") 
-        else: 
-            # create new window for the popup 
-            popup_window = Tk() 
-            popup_window.title("Lab 1225 Inventory") 
-            popup_window.geometry("500x250") 
-    ''' 
-    # ^ simplified version  
 
 
+  def show_lab_data():
+    # creates a new window for the popup
+    # creates 3 windows hard-coded for lab 1208, lab 1224, and lab 1225    
+    popup_window_1208 = Tk() 
+    popup_window_1208.title(f"{labDictionary.get('name')} Inventory")
+    popup_window_1208.geometry("500x250")
 
-    # list of Lab Dicts 
-    labDicts = [lab1208data, lab1224data, lab1225data]
-    #labDictNames = ["Lab 1208 Inventory", "Lab 1224 Inventory", "Lab 1225 Inventory"]
-    for labDict in labDicts:
-            if labDict == lab1208data:
-                # create new window for the popup 
-                popup_window = Tk() 
-                popup_window.title(f"{labDict.get('name')} Inventory") 
-                popup_window.geometry("500x250")
-            elif labDict == lab1224data:
-                # create new window for the popup 
-                popup_window = Tk() 
-                popup_window.title(f"{labDict.get('name')} Inventory") 
-                popup_window.geometry("500x250")
-            else: 
-                # create new window for the popup 
-                popup_window = Tk() 
-                popup_window.title(f"{labDict.get('name')} Inventory") 
-                popup_window.geometry("500x250") 
+    close_button_1208 = Button(popup_window_1208, text="Close", command=popup_window_1208.destroy)
+    close_button_1208.pack() 
 
-    def insertLabData(labDictionary):
-        # create a label
-        labDataGUI = Label(popup_window, text="Key-Value Pairs")  
-        labDataGUI.pack()     
-        # create a listbox 
-        listbox = Listbox(popup_window)
-        listbox.pack(fill="both", expand=True)        
-        # Add key-value pairs to the listbox  
+    popup_window_1208.mainloop()  
+
+  show_lab_data() 
  
 
-        for key, value in labDictionary.items():
-            listbox.insert("end", f"{key}:      {value}") 
-
-    label = Label(popup_window, text=insertLabData(labDictionary)) 
-    label.pack() 
-
-    # Add a button to close the popup window 
-    close_button = Button(popup_window, text="Close", command=popup_window.destroy)
-    close_button.pack()     
-
-    popup_window.mainloop()   
-''
 # Create buttons positioned within main_canvas
-button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=open_popup(lab1208data))
+button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=lambda: open_popup(lab1208data))
 button1.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
-button2 = Button(inner_canvas_2, text="Lab 1224", width=10, command=open_popup(lab1224data))
+button2 = Button(inner_canvas_2, text="Lab 1224", width=10, command=lambda: open_popup(lab1224data))
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
-button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=open_popup(lab1225data))
-button.pack()
+button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=lambda: open_popup(lab1225data))
+button3.pack(side="top", padx=10, pady=10)  # we use a lambda function to call open_popup
+                          # and pass specific dictionary data when the button is clicked
+                          # ensures pop-up windows are only created upon clicking the buttons 
 
-root.mainloop()     
+root.mainloop()    
+     
 ''' 
+   
