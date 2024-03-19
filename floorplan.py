@@ -2,12 +2,17 @@
 # this data will be pulled from a SQL database
 # the user will also be able to interact with GUI to edit the SQL database
 # ultimatey, the user will be able to add custom objects into the gui from the user interface 
+
+# 1) prototype using SQLite 
+# 2) Port the database (dictoinary data) code to a larger database in PostgreSQL 
+
 from tkinter import *
+import sqlite3
 
 root = Tk()
 root.title("Marcy Lane - Floor 21")
 root.maxsize(1000, 1000)
-root.config(bg="green")
+root.config(bg="gray")
 
 lab1208data = {
   "name": "Lab 1208",
@@ -60,10 +65,14 @@ def open_popup(labDictionary):
 
     # creates a label for the lab dictionary contents
     labDataGUI = Label(popup_window, text=f"{labDictionary.get('name')} Inventory Details") 
-    labDataGUI.pack()  
+    labDataGUI.pack() 
 
-    # Creates a listbox to display data 
-    listbox = Listbox(popup_window)  
+    # Create a frame with a border for the listbox
+    border_frame = Frame(popup_window, relief="groove", borderwidth=2)
+    border_frame.pack(fill="both", expand=True, padx=5, pady=5)  
+
+    # Creates a listbox INSIDE FRAME (which is inside the popup_window, which is created from button click, attached to inner_canvas_123) 
+    listbox = Listbox(border_frame)  
     listbox.pack(fill="both", expand=True)  
 
     # Adds key-value pairs to the listbox 
@@ -74,7 +83,7 @@ def open_popup(labDictionary):
     close_button = Button(popup_window, text="Close", command=popup_window.destroy)
     close_button.pack() 
 
-    popup_window.mainloop()  
+    popup_window.mainloop()    
 
   show_lab_data() 
  
@@ -90,3 +99,4 @@ button3.pack(side="top", padx=10, pady=10)  # we use a lambda function to call o
                           # and pass specific dictionary data when the button is clicked
                           # ensures pop-up windows are only created upon clicking the buttons 
 root.mainloop()    
+ 
