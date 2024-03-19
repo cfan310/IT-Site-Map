@@ -70,7 +70,6 @@ for dictionary in dictList:
     formatted_text_floor_12 += f"{key}: {value}\n"
 
 
-  
 # INSERTS TEXT AS A SINGLE TEXT OBJECT WITH FORMATTING 
 
 text_widget = Text(canvas, font=("Arial", 12), bg="lightgray") 
@@ -87,6 +86,7 @@ for key, value in lab1225data.items():
 def show_text():
     text_widget.config(state="normal")
     text_widget.insert("1.0", formatted_text)   # inserts the info stored in the formatted_text variable
+ 
 
 
 # Creates buttons for 1208, 1224, and 1225. Upon click, we open a new window with details 
@@ -146,6 +146,7 @@ inner_canvas_3.pack(side='right')
 
 
 from tkinter import *
+from tkinter import *
 
 root = Tk()
 root.title("Marcy Lane - Floor 21")
@@ -158,6 +159,7 @@ root.config(bg="green")
 
 
 lab1208data = {
+  "name": "Lab 1208",
   "computer model": 790,
   "number of computers": 16,
   "printer model": "HP M602",
@@ -182,7 +184,9 @@ lab1225data = {
   "number of printers": 1,
   "projector model": "Dell 1510x",
   "number of projectors": 1        
-}
+} 
+
+
 
 # Create inner canvases (already positioned correctly using pack)
 inner_canvas_1 = Canvas(root, width=100, height=100, bg='orange')
@@ -192,47 +196,57 @@ inner_canvas_2.pack(side='right')
 inner_canvas_3 = Canvas(inner_canvas_2, width=100, height=100, bg='blue')
 inner_canvas_3.pack(side='right')
 # ... and so on for inner_canvas_3 and inner_canvas_4
- 
 
 '''
 button3 = Button(inner_canvas_3, text="Lab 1225", width=10)
 button3.pack(side="top", padx=10, pady=10)  # Adjust position with options
-'''
+'''    
 
 def open_popup(labDictionary): 
-    
+    '''
     # list of Lab Dicts 
     labDicts = [lab1208data, lab1224data, lab1225data]
     # iterate through lists and then insert
-    for labDictName in labDicts:
+    for labDict in labDicts:
         if labDict == lab1208data:
             # create new window for the popup 
             popup_window = Tk() 
             popup_window.title("Lab 1208 Inventory") 
             popup_window.geometry("500x250") 
-        elif:
-            labDict == lab1224data:
+        elif: labDict == lab1224data:
             # create new window for the popup 
             popup_window = Tk() 
             popup_window.title("Lab 1224 Inventory") 
             popup_window.geometry("500x250") 
-        else:
+        else: 
             # create new window for the popup 
             popup_window = Tk() 
             popup_window.title("Lab 1225 Inventory") 
             popup_window.geometry("500x250") 
+    ''' 
+    # ^ simplified version  
 
-    # ^ simplified version
+
 
     # list of Lab Dicts 
     labDicts = [lab1208data, lab1224data, lab1225data]
-    labDictNames = ["Lab 1208 Inventory", "Lab 1224 Inventory", "Lab 1225 Inventory"]
-    for labDictName in labDictNames:
-            # create new window for the popup 
-            popup_window = Tk() 
-            popup_window.title(f"{labDictName} Inventory") 
-            popup_window.geometry("500x250")
-
+    #labDictNames = ["Lab 1208 Inventory", "Lab 1224 Inventory", "Lab 1225 Inventory"]
+    for labDict in labDicts:
+            if labDict == lab1208data:
+                # create new window for the popup 
+                popup_window = Tk() 
+                popup_window.title(f"{labDict.get('name')} Inventory") 
+                popup_window.geometry("500x250")
+            elif labDict == lab1224data:
+                # create new window for the popup 
+                popup_window = Tk() 
+                popup_window.title(f"{labDict.get('name')} Inventory") 
+                popup_window.geometry("500x250")
+            else: 
+                # create new window for the popup 
+                popup_window = Tk() 
+                popup_window.title(f"{labDict.get('name')} Inventory") 
+                popup_window.geometry("500x250") 
 
     def insertLabData(labDictionary):
         # create a label
@@ -242,23 +256,20 @@ def open_popup(labDictionary):
         listbox = Listbox(popup_window)
         listbox.pack(fill="both", expand=True)        
         # Add key-value pairs to the listbox  
+ 
 
         for key, value in labDictionary.items():
-        listbox.insert("end", f"{key}:     {value}") 
+            listbox.insert("end", f"{key}:      {value}") 
 
-
-    # add content to the popup window  
-    label = Label(popup_window, text=insertLabData()) 
+    label = Label(popup_window, text=insertLabData(labDictionary)) 
     label.pack() 
 
     # Add a button to close the popup window 
     close_button = Button(popup_window, text="Close", command=popup_window.destroy)
-    close_button.pack()    
+    close_button.pack()     
 
-    popup_window.mainloop()  
-  
-
-
+    popup_window.mainloop()   
+''
 # Create buttons positioned within main_canvas
 button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=open_popup(lab1208data))
 button1.pack(side="top", padx=10, pady=10)  # Adjust position with options
@@ -267,7 +278,7 @@ button2 = Button(inner_canvas_2, text="Lab 1224", width=10, command=open_popup(l
 button2.pack(side="top", padx=10, pady=10)  # Adjust position with options
 
 button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=open_popup(lab1225data))
-button.pack() 
+button.pack()
 
-root.mainloop()    
+root.mainloop()     
 ''' 
