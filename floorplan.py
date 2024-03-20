@@ -4,10 +4,11 @@
 # ultimatey, the user will be able to add custom objects into the gui from the user interface 
 
 # 1) prototype using SQLite 
-# 2) Port the database (dictoinary data) code to a larger database in PostgreSQL 
-
+# 2) Port the database (dictoinary data) code to a larger database in PostgreSQL  
+ 
 from tkinter import *
 import sqlite3
+import csv
 
 root = Tk()
 root.title("Marcy Lane - Floor 21")
@@ -42,7 +43,24 @@ lab1225data = {
   "number of printers": 1,
   "projector model": "Dell 1510x",
   "number of projectors": 1        
-} 
+}    
+
+'''
+# Open a CSV file for writing
+with open("lab_data.csv", "w", newline="") as csvfile:
+
+    # Create a CSV writer object
+    writer = csv.DictWriter(csvfile, fieldnames=data[0].keys())
+
+    # Write the header row
+    writer.writeheader()
+
+    # Write each dictionary as a row in the CSV file
+    for row in data:
+        writer.writerow(row)
+
+print("CSV file created successfully!")
+'''
  
 # Create inner canvases (already positioned correctly using pack)
 inner_canvas_1 = Canvas(root, width=100, height=100, bg='orange')
@@ -99,4 +117,43 @@ button3.pack(side="top", padx=10, pady=10)  # we use a lambda function to call o
                           # and pass specific dictionary data when the button is clicked
                           # ensures pop-up windows are only created upon clicking the buttons 
 root.mainloop()    
+'''
+
+# ---------SQL Functionality--------------
+
+# creates lab_inventory.db database stored in conn variable 
+conn = sqlite3.connect('lab_inventory.db')  
+
+# creates cursor object to interact with database and execute SQL statements 
+# conn >>>> connect to the database 
+cursor = conn.cursor()     
+
+# defines SQL statement to create the table
+# table will have columns matching the keys of the lab dictionaries 
+
+create_table_sql = """
+CREATE TABLE IF NOT EXISTS lab_inventory (
+  name TEXT PRIMARY KEY,        # text data type, set as primary key
+  computer_model INTEGER,       # integer data type to store computer model numbers   
+  number_of_computers INTEGER,  # integer data type to store number of computers
+  printer_model TEXT,           # text data type to store printer model names    
+  number_of_printers INTEGER,   # integer data type to store the number of printers 
+  projector_model TEXT,         # text data type to store projector model names 
+  number_of_projectors INTEGER  # integer data type to store the number of projectors     
+);
+"""
+
+cursor.execute(create_table_sql) 
+
+# commits the post SQL statement execution changes to the database file  
+conn.commit()  
+
+conn.close() 
+
+print("Database and table completed successfully!")  
  
+'''
+ # next steps: 1) position popup windows corresponding to floorplan
+ # 2) add PostgreSQL table from CSV file   3) create data feed from SQL >>> tkinter app
+
+
