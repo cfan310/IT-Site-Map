@@ -151,9 +151,53 @@ conn.commit()
 conn.close() 
 
 print("Database and table completed successfully!")  
+
+---------------------Window Placement--------------------------------------------
+
+def create_popup(x_offset=120, y_offset=50):
+
+  # uses tkinter module to call Toplevel object, and creates a popup window  
+    popup = tk.Toplevel()
+    # titles the popup (opens when clicked)
+    popup.title("Centered Popup")
+
+    # Optional: Set window size if desired
+    popup.geometry("20x200")    # width: 20   height: 200
+
+
+    # Centering logic
+    screen_width = popup.winfo_screenwidth()  # gets the screen width from the popup (which we've set using the .geometry() method)
+    screen_height = popup.winfo_screenheight()  # gets screen height  
+    window_width = popup.winfo_width()      # gets the width of the popup window (appears after button click) 
+    window_height = popup.winfo_height()    # gets the height of the popup window (appears after button click)
+
+    center_x = (screen_width - window_width) // 2
+    center_y = (screen_height - window_height) // 2
+
+    # Combine offset and centering calculations
+    final_x = center_x + x_offset
+    final_y = center_y + y_offset
+
+    popup.geometry(f"+{final_x}+{final_y}")
+
+    label = tk.Label(popup, text="This is a popup window")
+    label.pack()
+
+root = tk.Tk()
+root.title("Main Window")
+mainWindow = root
+
+button = tk.Button(mainWindow, text="Open Popup (Centered)", command=create_popup)
+button.pack()
+
+# Optionally create a popup with specific offsets
+button2 = tk.Button(mainWindow, text="Open Popup (Offset)", command=lambda: create_popup(250, 120))
+button2.pack()
+
+mainWindow.mainloop()   
+
  
 '''
  # next steps: 1) position popup windows corresponding to floorplan
  # 2) add PostgreSQL table from CSV file   3) create data feed from SQL >>> tkinter app
-
-
+ 
