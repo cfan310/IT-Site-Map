@@ -197,24 +197,39 @@ button2.pack()
 mainWindow.mainloop()   
 
  
-'''
+
  # next steps: 1) position popup windows corresponding to floorplan
  # 2) add PostgreSQL table from CSV file   3) create data feed from SQL >>> tkinter app
  
+# transfer code from grid to pack
 
- 
-# create main window
-mainWindow = Tk() 
+from tkinter import Tk, Label
 
-# create a frame for packing the canvas
-frame = Frame(mainWindow)
-frame.pack() 
+# Create the main window
+root = Tk()
+root.title("Four Boxes")
 
-# Create canvas 
-canvas = Canvas(frame, width=400, height=400)
-canvas.pack(side="top") # adjust side for vertical/horizontal placement) 
+# Define number of rows and columns (2x2 grid)
+rows = 2
+columns = 2
 
-# Draw rectangle at specific coordinates (relative to canvas) 
-box_id = canvas.create_rectangle(100, 50, 250, 120, fill="red") 
+# Function to create a labeled box (optional for cleaner code)
+def create_box(text, row, col):
+  box = Label(root, text=text, bg="lightblue", padx=10, pady=10)
+  box.grid(row=row, column=col)
 
-mainWindow.mainloop() 
+# Create boxes using grid layout
+create_box("Lab 1225", 0, 0)
+create_box("Lab 1224", 0, 1)
+create_box("Lab 1209", 1, 0)
+create_box("Lab 1208", 1, 1)
+
+# Optional: Configure rows and columns for equal spacing (can be done visually in Tkinter GUI too)
+for i in range(rows):
+  root.rowconfigure(i, weight=1)
+for i in range(columns):
+  root.columnconfigure(i, weight=1)
+
+# Run the main loop
+root.mainloop() 
+''' 
