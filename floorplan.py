@@ -201,3 +201,20 @@ mainWindow.mainloop()
  # next steps: 1) position popup windows corresponding to floorplan
  # 2) add PostgreSQL table from CSV file   3) create data feed from SQL >>> tkinter app
  
+
+ 
+# create main window
+mainWindow = Tk() 
+
+# create a frame for packing the canvas
+frame = Frame(mainWindow)
+frame.pack() 
+
+# Create canvas 
+canvas = Canvas(frame, width=400, height=400)
+canvas.pack(side="top") # adjust side for vertical/horizontal placement) 
+
+# Draw rectangle at specific coordinates (relative to canvas) 
+box_id = canvas.create_rectangle(100, 50, 250, 120, fill="red") 
+
+mainWindow.mainloop() 
