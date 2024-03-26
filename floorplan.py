@@ -232,4 +232,47 @@ for i in range(columns):
 
 # Run the main loop
 root.mainloop() 
+
+
+----------------WINDOW PLACEMENT USING GRID------------------------------
+
+# Create the main window
+root = Tk()
+root.title("Floor 12 Layout using Grid")
+
+# Define grid layout (2 columns)
+root.columnconfigure(0, weight=3)  # More weight for grid area
+root.columnconfigure(1, weight=3)  # Less weight for object area
+
+labBackgroundColor = "DarkSlateGrey"
+labTextColor = "white"
+
+# Grid frame for the boxes
+grid_frame = Frame(root)  # Optional background color for visualization
+grid_frame.grid(row=0, column=0, sticky="nsew")  # Fills entire cell (optional)
+
+# Create and place boxes within the grid frame (using grid within grid_frame)
+box1 = Label(grid_frame, text="Lab 1224", bg=labBackgroundColor, fg=labTextColor, highlightthickness=2, highlightbackground="white", padx=50, pady=50)
+box1.grid(row=0, column=0)
+
+box2 = Label(grid_frame, text="Lab 1225", bg=labBackgroundColor, fg=labTextColor, highlightthickness=2, highlightbackground="white", padx=50, pady=50)
+box2.grid(row=0, column=1)
+
+mainFloor = Label(grid_frame, text="Main Floor", bg="brown", padx=100, pady=30)
+mainFloor.grid(row=1, column=0, columnspan=2)
+
+box3 = Label(grid_frame, text="Lab 1209", bg=labBackgroundColor, fg=labTextColor, highlightthickness=2, highlightbackground="white", padx=50, pady=50)
+box3.grid(row=2, column=0)
+
+box4 = Label(grid_frame, text="Lab 1208", bg=labBackgroundColor, fg=labTextColor, highlightthickness=2, highlightbackground="white", padx=50, pady=50)
+box4.grid(row=2, column=1)
+
+# Object directly in the main grid (sticky for full height)
+object_label = Label(root, text="Entrance", bg="lightgray", width=20)
+object_label.grid(row=0, column=1, sticky="ns") 
+
+
+# Run the main loop
+root.mainloop() 
+
 ''' 
