@@ -275,4 +275,108 @@ object_label.grid(row=0, column=1, sticky="ns")
 # Run the main loop
 root.mainloop() 
 
+
+
+
+
+
+
+
+# -----------------------------------------------------------------FLOORPLAN BUTTON CLICK CODE --------------
+
+root = Tk()
+root.title("Marcy Lane - Floor 21")
+root.maxsize(1000, 1000)
+root.config(bg="gray")
+
+lab1208data = {
+  "name": "Lab 1208",
+  "computer model": 790,
+  "number of computers": 16,
+  "printer model": "HP M602",
+  "number of printers": 1,
+  "projector model": "Dell 1510x",
+  "number of projectors": 1
+}
+
+lab1224data = {
+  "name": "Lab 1224",
+  "computer model": 7040/20,
+  "number of computers": 26,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x", 
+  "number of projectors": 1,
+}
+# when 1225 button is clicked, the following data will appear inside the canvas box
+lab1225data = {
+  "name": "Lab 1225",
+  "computer model": 7040,  
+  "number of computers": 29,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x",
+  "number of projectors": 1        
+}    
+
+# RECREATION USING GRID INSTEAD OF PACK 
+
+# Create inner canvases using grid
+inner_canvas_1 = Canvas(root, width=100, height=100, bg='orange')
+inner_canvas_1.grid(row=0, column=0, sticky="nsew")  # Top-left corner
+
+inner_canvas_2 = Canvas(root, width=100, height=100, bg='pink')
+inner_canvas_2.grid(row=0, column=1, sticky="nsew")  # Top-right corner
+
+inner_canvas_3 = Canvas(root, width=100, height=100, bg='blue')
+inner_canvas_3.grid(row=1, column=0, columnspan=2, sticky="nsew")  # Span both columns below
+
+# ... (and so on for inner_canvas_3 and inner_canvas_4 if applicable)
+
+# Create buttons using grid within their respective canvases
+button1 = Button(inner_canvas_1, text="Lab 1208", width=10, command=lambda: open_popup(lab1208data))
+button1.grid(row=0, column=0, padx=10, pady=10)
+
+button2 = Button(inner_canvas_2, text="Lab 1224", width=10, command=lambda: open_popup(lab1224data))
+button2.grid(row=0, column=0, padx=10, pady=10)
+
+button3 = Button(inner_canvas_3, text="Lab 1225", width=10, command=lambda: open_popup(lab1225data))
+button3.grid(row=0, column=0, padx=10, pady=10)
+
+# ... (rest of your code, including the open_popup function, remains unchanged)
+def open_popup(labDictionary): 
+
+  def show_lab_data():
+    # creates a new window for the popup
+    # creates 3 windows hard-coded for lab 1208, lab 1224, and lab 1225    
+    popup_window = Tk() 
+    popup_window.title(f"{labDictionary.get('name', 'None')} Inventory")
+    popup_window.geometry("500x250")
+
+    # creates a label for the lab dictionary contents
+    labDataGUI = Label(popup_window, text=f"{labDictionary.get('name')} Inventory Details") 
+    labDataGUI.pack() 
+
+    # Create a frame with a border for the listbox
+    border_frame = Frame(popup_window, relief="groove", borderwidth=2)
+    border_frame.pack(fill="both", expand=True, padx=5, pady=5)  
+
+    # Creates a listbox INSIDE FRAME (which is inside the popup_window, which is created from button click, attached to inner_canvas_123) 
+    listbox = Listbox(border_frame)  
+    listbox.pack(fill="both", expand=True)  
+
+    # Adds key-value pairs to the listbox 
+    for key, value in labDictionary.items():
+      listbox.insert("end", f"{key.capitalize()}: {value}") 
+
+    # Adds a button that closes the popup window 
+    close_button = Button(popup_window, text="Close", command=popup_window.destroy)
+    close_button.pack() 
+
+    popup_window.mainloop()    
+
+  show_lab_data() 
+
+root.mainloop()
+
 ''' 
