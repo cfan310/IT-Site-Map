@@ -379,4 +379,6 @@ def open_popup(labDictionary):
 
 root.mainloop()
 
+# incorporate powershell script to pull in data automatically
+
 ''' 
