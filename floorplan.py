@@ -381,4 +381,6 @@ root.mainloop()
 
 # incorporate powershell script to pull in data automatically
 
+# edit display structure and utilize floorplan map to use grid to create accurate floorplan
+
 ''' 
