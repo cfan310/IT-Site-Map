@@ -394,7 +394,8 @@ window_height = 650
 
 # Set a fixed size for all squares
 square_size = 70
-#entrance_rectangle_size # entrance is rectangle need separate functoin
+rectangle_height = 40
+rectangle_width = 180
 
 # Create the main window
 root = Tk()
@@ -415,6 +416,13 @@ def create_square_with_text(x, y, text):
   )
   return square, text_id
 
+def create_rectangle_with_text(x, y, text): 
+  rectangle = background_canvas.create_rectangle(
+    x, y, x + rectangle_width, y + rectangle_height, fill="black")
+  text_id = background_canvas.create_text(
+    x + rectangle_width / 2, y + rectangle_height / 2, text=text, font=("Arial", 12), fill="white")
+  return rectangle, text_id
+
 # Create squares with text (using the fixed size)
 square0, text0 = create_square_with_text(140, 20, "ADMIN")
 square1, text1 = create_square_with_text(130, 110, "Lab 1212")
@@ -424,13 +432,18 @@ square4, text4 = create_square_with_text(130, 360, "Lab 1209")
 square7, text7 = create_square_with_text(40, 440, "Lab 1208")
 
 
-square2, text2 = create_square_with_text(480, 120, "Lab 1222")
-square3, text3 = create_square_with_text(480, 200, "Lab 1224")
-square8, text8 = create_square_with_text(390, 360, "Lab 1225")
+square2, text2 = create_square_with_text(500, 120, "Lab 1222")
+square3, text3 = create_square_with_text(500, 200, "Lab 1224")
+square8, text8 = create_square_with_text(425, 360, "Lab 1225")
+
+entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
 
 # Start the event loop
-root.mainloop() 
+root.mainloop()   
 
+
+
+  
 
 ''' 
