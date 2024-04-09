@@ -416,12 +416,44 @@ def create_square_with_text(x, y, text):
   )
   return square, text_id
 
-def create_rectangle_with_text(x, y, text): 
+def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
   rectangle = background_canvas.create_rectangle(
     x, y, x + rectangle_width, y + rectangle_height, fill="black")
   text_id = background_canvas.create_text(
     x + rectangle_width / 2, y + rectangle_height / 2, text=text, font=("Arial", 12), fill="white")
   return rectangle, text_id
+
+def create_west_hallway(x, y):
+  hallway = background_canvas.create_rectangle(
+    x, y, x + west_hallway_width, y + west_hallway_height,  fill="turquoise")
+
+west_hallway_width = 20
+west_hallway_height = 495
+westHallway = create_west_hallway(110, 20)  # need tto add width for west hallway
+
+def create_north_hallway(x, y):
+  hallway = background_canvas.create_rectangle(
+    x, y, x + north_hallway_width, y + north_hallway_height,  fill="turquoise")
+
+north_hallway_width = 400
+north_hallway_height = 20
+northHallway = create_north_hallway(130, 90)  # need tto add width for west hallway
+
+def create_east_hallway(x, y):
+  hallway = background_canvas.create_rectangle(
+    x, y, x + east_hallway_width, y + east_hallway_height,  fill="turquoise")
+
+east_hallway_width = 20
+east_hallway_height = 425
+eastHallway = create_east_hallway(520, 90)  # need tto add width for west hallway
+
+def create_south_hallway(x, y):
+  hallway = background_canvas.create_rectangle(
+    x, y, x + south_hallway_width, y + south_hallway_height,  fill="turquoise")
+
+south_hallway_width = 390
+south_hallway_height = 20
+southHallway = create_south_hallway(130, 495)  # need tto add width for west hallway
 
 # Create squares with text (using the fixed size)
 square0, text0 = create_square_with_text(140, 20, "ADMIN")
@@ -432,9 +464,9 @@ square4, text4 = create_square_with_text(130, 360, "Lab 1209")
 square7, text7 = create_square_with_text(40, 440, "Lab 1208")
 
 
-square2, text2 = create_square_with_text(500, 120, "Lab 1222")
-square3, text3 = create_square_with_text(500, 200, "Lab 1224")
-square8, text8 = create_square_with_text(425, 360, "Lab 1225")
+square2, text2 = create_square_with_text(540, 120, "Lab 1222")
+square3, text3 = create_square_with_text(540, 230, "Lab 1224")
+square8, text8 = create_square_with_text(450, 360, "Lab 1225")
 
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
@@ -444,6 +476,5 @@ root.mainloop()
 
 
 
-  
 
 ''' 
