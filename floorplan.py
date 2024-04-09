@@ -383,4 +383,54 @@ root.mainloop()
 
 # edit display structure and utilize floorplan map to use grid to create accurate floorplan
 
+
+-----------------------FLOORPLAN STRUCTURE WOITH GRID FLOOR 12---------------------------------
+
+from tkinter import Tk, Frame, Canvas
+
+# Define window size
+window_width = 650
+window_height = 650
+
+# Set a fixed size for all squares
+square_size = 70
+#entrance_rectangle_size # entrance is rectangle need separate functoin
+
+# Create the main window
+root = Tk()
+root.title("Black Squares with Text on Grey Background")
+root.geometry(f"{window_width}x{window_height}")
+
+# Create a grey canvas as the background
+background_canvas = Canvas(root, width=window_width, height=window_height, bg="grey")       
+background_canvas.grid(row=0, column=0, sticky="nsew")
+
+# Function to create and place a black square with text (using fixed size)
+def create_square_with_text(x, y, text):
+  square = background_canvas.create_rectangle(
+      x, y, x + square_size, y + square_size, fill="black"
+  )
+  text_id = background_canvas.create_text(
+      x + square_size / 2, y + square_size / 2, text=text, font=("Arial", 12), fill="white"
+  )
+  return square, text_id
+
+# Create squares with text (using the fixed size)
+square0, text0 = create_square_with_text(140, 20, "ADMIN")
+square1, text1 = create_square_with_text(130, 110, "Lab 1212")
+square6, text6 = create_square_with_text(40, 200, "Lab 1213")
+square5, text5 = create_square_with_text(40, 280, "Lab 1211")
+square4, text4 = create_square_with_text(130, 360, "Lab 1209")
+square7, text7 = create_square_with_text(40, 440, "Lab 1208")
+
+
+square2, text2 = create_square_with_text(480, 120, "Lab 1222")
+square3, text3 = create_square_with_text(480, 200, "Lab 1224")
+square8, text8 = create_square_with_text(390, 360, "Lab 1225")
+
+
+# Start the event loop
+root.mainloop() 
+
+
 ''' 
