@@ -456,7 +456,7 @@ south_hallway_height = 20
 southHallway = create_south_hallway(130, 495)  # need tto add width for west hallway
 
 # Create squares with text (using the fixed size)
-square0, text0 = create_square_with_text(140, 20, "ADMIN")
+square0, text0 = create_square_with_text(150, 20, "ADMIN")
 square1, text1 = create_square_with_text(130, 110, "Lab 1212")
 square6, text6 = create_square_with_text(40, 200, "Lab 1213")
 square5, text5 = create_square_with_text(40, 280, "Lab 1211")
@@ -472,7 +472,11 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 
 # Start the event loop
-root.mainloop()   
+root.mainloop()       
+
+# next steps: add button click functoinality
+  # onclick, open new windows displaying dictionary data of lab inventory
+    # connect to postgresql databse and replace dictionary data with dataflow from sql
 
 
 
