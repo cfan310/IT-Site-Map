@@ -478,6 +478,73 @@ root.mainloop()
   # onclick, open new windows displaying dictionary data of lab inventory
     # connect to postgresql databse and replace dictionary data with dataflow from sql
 
+#--------------------Updated window button functionality for grid-------------------
+
+import tkinter as tk
+
+lab1208data = {
+  "name": "Lab 1208",
+  "computer model": 790,
+  "number of computers": 16,
+  "printer model": "HP M602",
+  "number of printers": 1,
+  "projector model": "Dell 1510x",
+  "number of projectors": 1
+}
+
+lab1224data = {
+  "name": "Lab 1224",
+  "computer model": 7040/20,
+  "number of computers": 26,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x", 
+  "number of projectors": 1,
+}
+# when 1225 button is clicked, the following data will appear inside the canvas box
+lab1225data = {
+  "name": "Lab 1225",
+  "computer model": 7040,  
+  "number of computers": 29,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x",
+  "number of projectors": 1        
+}    
+
+
+ 
+def open_new_window(data):
+  # Create a new window
+  new_window = tk.Toplevel()
+  new_window.title("New Window")
+
+  # Display data in the new window
+  label = tk.Label(new_window, text=data.items()) # the data vill be the key-value paires of the dictionary
+  label.grid(row=0, column=0)
+
+  # (Optional) Add a close button to the new window
+  close_button = tk.Button(new_window, text="Close", command=new_window.destroy)
+  close_button.grid(row=1, column=0)
+
+  # Run the mainloop for the new window (important)
+  new_window.mainloop()
+
+root = tk.Tk()
+root.title("Main Window")
+
+# data list should be what we want to name the buttons
+data_list = [lab1208data.get("name"), lab1224data.get("name"), lab1225data.get("name")] # stored as dictionaries 
+boxes = []
+
+for i, data in enumerate(data_list):  # enumerate() allows us to loop thru dictionaries' index and value
+  box = tk.Button(
+      root, text=data, 
+      command=lambda d=data: open_new_window(d),
+      bg="lightblue", borderwidth=2, relief="groove"
+  )
+  box.grid(row=i, column=0)
+  boxes.append(box)
 
 
 
