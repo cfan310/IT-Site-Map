@@ -534,7 +534,7 @@ root = tk.Tk()
 root.title("Main Window")
 
 # data list should be what we want to name the buttons
-data_list = [lab1208data.get("name"), lab1224data.get("name"), lab1225data.get("name")] # stored as dictionaries 
+data_list = [lab1208data.get(), lab1224data.get(), lab1225data.get()] # stored as dictionaries 
 boxes = []
 
 for i, data in enumerate(data_list):  # enumerate() allows us to loop thru dictionaries' index and value
@@ -545,6 +545,8 @@ for i, data in enumerate(data_list):  # enumerate() allows us to loop thru dicti
   )
   box.grid(row=i, column=0)
   boxes.append(box)
+
+root.mainloop()  
 
 
 
