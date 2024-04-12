@@ -468,6 +468,9 @@ square2, text2 = create_square_with_text(540, 120, "Lab 1222")
 square3, text3 = create_square_with_text(540, 230, "Lab 1224")
 square8, text8 = create_square_with_text(450, 360, "Lab 1225")
 
+# create border function 
+# create user input forms at bottom below entrance
+
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
 
