@@ -551,6 +551,15 @@ for i, data in enumerate(data_list):  # enumerate() allows us to loop thru dicti
 
 root.mainloop()  
 
+lab1000data {
+  user_name,
+  serial_number, 
+  location, 
+  service_start,
+  service_end
+
+}
+
 
 
 ''' 
