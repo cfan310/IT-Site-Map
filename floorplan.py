@@ -386,7 +386,7 @@ root.mainloop()
 
 -----------------------FLOORPLAN STRUCTURE WOITH GRID FLOOR 12---------------------------------
 
-from tkinter import Tk, Frame, Canvas, Button  # button class
+from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label  # button class
 
 # Define window size
 window_width = 650
@@ -398,15 +398,15 @@ rectangle_height = 40
 rectangle_width = 180
 
 # Create the main window
-root = Tk()
-root.title("Black Squares with Text on Grey Background")
+root = Tk() # displays the root window and manages other components. Creates instance of the tkinter frame. 
+root.title("Black Squares with Text on Grey Background")  # title of root (main) window 
 root.geometry(f"{window_width}x{window_height}")
 
 # Create a grey canvas as the background
 background_canvas = Canvas(root, width=window_width, height=window_height, bg="grey")       
 background_canvas.grid(row=0, column=0, sticky="nsew")
 
-# Function to create and place a black square with text (using fixed size)
+# Function to create and place a black square with text (for the labs) (using fixed size)
 def create_square_with_text(x, y, text):
   square = background_canvas.create_rectangle(
       x, y, x + square_size, y + square_size, fill="black"
@@ -414,7 +414,9 @@ def create_square_with_text(x, y, text):
   text_id = background_canvas.create_text(
       x + square_size / 2, y + square_size / 2, text=text, font=("Arial", 12), fill="white"
   )
+
   return square, text_id
+
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
   rectangle = background_canvas.create_rectangle(
@@ -470,13 +472,7 @@ square8, text8 = create_square_with_text(450, 360, "Lab 1225")
 
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
-# ------------------CLICKING FUNCTIONALITY FOR LABS ---------------------------------
-
-
-
-# --------------SAMPLE LAB 1224 DISPLAY DATA----------------------------------------
-
-  
+# --------------SAMPLE LAB 1224 DISPLAY DATA---------------------------------------
 
 lab1224data = {
   "name": "Lab 1224",
@@ -487,6 +483,48 @@ lab1224data = {
   "projector model": "Dell 1510x", 
   "number of projectors": 1,
 } 
+
+print(lab1224data.items())
+
+# ------------------CLICKING FUNCTIONALITY FOR LABS ---------------------------------
+
+'''
+def create_popup(square_text):  # square_text will be the dictionairies for each lab ex. lab1224data
+  # create new top-level window
+  popup = Toplevel(root)   # (creates window atop all other windows) (paired to root window)  
+  popup.title(f"Details for {square_text}") # "Lab 1224 Data" 
+
+  # Add a label with data specific to the clicked square 
+  data_label = Label(popup, text=f"This is data related to {square_text}", font=("Arial", 12)) 
+  data_label.pack()
+
+'''
+
+# functoin to create and open the popup window 
+def open_popup(): 
+  # create a new top-level window  
+  popup = Toplevel(root) 
+  popup.title("Popup Window") 
+
+  # adds label with some text (and eventually will be dictionary data >> then formatted SQL data)    
+  popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
+  popup_label.grid(row=0, column=0)
+
+  # Adds a close button to the popup window 
+  close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
+  close_button.grid(row=5, column=0)  
+ 
+ 
+
+# button example: 
+
+button = Button(root, text="Click for Popup", command=open_popup) # command=open_popup) 
+button.grid(row=0, column=0)   
+
+
+
+
+
 
 '''
 #----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
@@ -510,9 +548,6 @@ def open_new_window(data):
 
 # ------------------CREATE CLICKABLE BOXES---------------------------------------  
 
-
-
-
 boxes = [] 
 data_list = ["Data 1", "Data 2", "Data 3"] # will hold lab dictionaries  # list is []  tuple is () > tuples are immutable
 
@@ -522,7 +557,7 @@ for i, data in enumerate(data_list):
 
 
 # Start the event loop
-root.mainloop()       
+root.mainloop()      
 
 # next steps: add button click functoinality
   # onclick, open new windows displaying dictionary data of lab inventory
