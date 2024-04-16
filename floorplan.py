@@ -510,6 +510,17 @@ def open_new_window(data):
 
 # ------------------CREATE CLICKABLE BOXES---------------------------------------  
 
+def square_click(event, square_id, text_id):
+  # details actions to perform when the square is clicked on GUI
+  print(f"Square {text.get()} clicked!") # prints that click succeeds without error
+
+# StringVar() build-in method to 
+text = StringVar() # temporary global variable to store the text object 
+# the text shown after button click will consist of, for ex., lab1224data.
+
+
+
+
 boxes = [] 
 data_list = ["Data 1", "Data 2", "Data 3"] # will hold lab dictionaries  # list is []  tuple is () > tuples are immutable
 
