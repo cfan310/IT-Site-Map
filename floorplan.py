@@ -386,7 +386,7 @@ root.mainloop()
 
 -----------------------FLOORPLAN STRUCTURE WOITH GRID FLOOR 12---------------------------------
 
-from tkinter import Tk, Frame, Canvas
+from tkinter import Tk, Frame, Canvas, Button  # button class
 
 # Define window size
 window_width = 650
@@ -468,10 +468,54 @@ square2, text2 = create_square_with_text(540, 120, "Lab 1222")
 square3, text3 = create_square_with_text(540, 230, "Lab 1224")
 square8, text8 = create_square_with_text(450, 360, "Lab 1225")
 
-# create border function 
-# create user input forms at bottom below entrance
-
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
+
+# ------------------CLICKING FUNCTIONALITY FOR LABS ---------------------------------
+
+
+
+# --------------SAMPLE LAB 1224 DISPLAY DATA----------------------------------------
+
+  
+
+lab1224data = {
+  "name": "Lab 1224",
+  "computer model": 7040/20,
+  "number of computers": 26,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x", 
+  "number of projectors": 1,
+} 
+
+'''
+#----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
+
+# Defines the content of the new window that opens on click of one of the lab squares s
+def open_new_window(data): 
+  # creates new window    Toplevel() creates a new independent window on top of all other windows (has its own title bar)
+  new_window = tk.Toplevel() 
+  new_window.title = ("New Window")   # this will be the value of the "name" key in the inserted dictionary
+
+  # display data in the new window    
+  label = tk.Label(new_window, text=data)  # data will be a dictionary 
+  lab.grid(row=0, column=0) 
+
+  # Add a close button to the new window 
+  close_button = tk.Button(new_window, text="Close", command=new_window.destroy)   
+  close_button.grid(row=1, column=0)  
+
+  # Run the mainloop for the new window
+  new_window.mainloop()  
+
+# ------------------CREATE CLICKABLE BOXES---------------------------------------  
+
+boxes = [] 
+data_list = ["Data 1", "Data 2", "Data 3"] # will hold lab dictionaries  # list is []  tuple is () > tuples are immutable
+
+# Creates buttons with custom style (change background, border, etc.) 
+for i, data in enumerate(data_list):  
+'''
 
 
 # Start the event loop
@@ -559,6 +603,7 @@ lab1000data {
   service_end
 
 }
+
 
 
 
