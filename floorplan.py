@@ -793,6 +793,9 @@ def open_popup():
 button = Button(root, text="Click for Popup", command=open_popup) # command=open_popup) 
 button.grid(row=0, column=0)  
 
+# NEXT STEPS 
+# make the above square a clickable button that opens up new window and displays formatted dictionary data
+# later a live feed of the formatted sql database queries  
 
 
 
