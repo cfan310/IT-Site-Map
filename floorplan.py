@@ -665,6 +665,22 @@ root.geometry(f"{window_width}x{window_height}")
 background_canvas = Canvas(root, width=window_width, height=window_height, bg="grey")       
 background_canvas.grid(row=0, column=0, sticky="nsew")
 
+
+
+def open_popup1(): 
+  # create a new top-level window  
+  popup = Toplevel(root) 
+  popup.title("Popup Window") 
+
+  # adds label with some text (and eventually will be dictionary data >> then formatted SQL data)    
+  popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
+  popup_label.grid(row=0, column=0)
+
+  # Adds a close button to the popup window 
+  close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
+  close_button.grid(row=5, column=0)  
+
+
 # Function to create and place a black square with text (for the labs) (using fixed size)
 def create_square_with_text(x, y, text):
   square = background_canvas.create_rectangle(
@@ -674,7 +690,12 @@ def create_square_with_text(x, y, text):
       x + square_size / 2, y + square_size / 2, text=text, font=("Arial", 12), fill="white"
   )
 
-  return square, text_id
+  return square, text_id 
+
+# need to make the above square a clickable button that opens up new window and displays formatted dictionary data
+# later a live feed of the formatted sql database queries  
+# # and analyze write about them
+
 
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
@@ -687,6 +708,7 @@ def create_rectangle_with_text(x, y, text):           # create_rectangle() a bui
 def create_west_hallway(x, y):
   hallway = background_canvas.create_rectangle(
     x, y, x + west_hallway_width, y + west_hallway_height,  fill="turquoise")
+
 
 west_hallway_width = 20
 west_hallway_height = 495
@@ -715,6 +737,7 @@ def create_south_hallway(x, y):
 south_hallway_width = 390
 south_hallway_height = 20
 southHallway = create_south_hallway(130, 495)  # need tto add width for west hallway
+ 
 
 # Create squares with text (using the fixed size)
 square0, text0 = create_square_with_text(150, 20, "ADMIN")
@@ -730,6 +753,7 @@ square3, text3 = create_square_with_text(540, 230, "Lab 1224")
 square8, text8 = create_square_with_text(450, 360, "Lab 1225")
 
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
+
 
 # --------------SAMPLE LAB 1224 DISPLAY DATA---------------------------------------
 
@@ -756,7 +780,6 @@ lab1225data = {
 print(lab1224data.items())
 
 # list of labs to iterate thru for button click window open and close functionality 
-
 labsList = [lab1224data, lab1225data]
 
 # ------------------CLICKING FUNCTIONALITY FOR LABS ---------------------------------
@@ -769,9 +792,11 @@ def create_popup(square_text):  # square_text will be the dictionairies for each
 
   # Add a label with data specific to the clicked square 
   data_label = Label(popup, text=f"This is data related to {square_text}", font=("Arial", 12)) 
-  data_label.pack()
+  data_label.pack()  
 
-'''
+
+
+'''  
 
 # functoin to create and open the popup window 
 def open_popup(): 
@@ -779,7 +804,8 @@ def open_popup():
   popup = Toplevel(root) 
   popup.title("Popup Window") 
 
-  # adds label with some text (and eventually will be dictionary data >> then formatted SQL data)    
+  # adds label with some text (and eventually
+  # will be dictionary data >> then formatted SQL data)    
   popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
   popup_label.grid(row=0, column=0)
 
@@ -793,9 +819,47 @@ def open_popup():
 button = Button(root, text="Click for Popup", command=open_popup) # command=open_popup) 
 button.grid(row=0, column=0)  
 
-# NEXT STEPS 
-# make the above square a clickable button that opens up new window and displays formatted dictionary data
-# later a live feed of the formatted sql database queries  
+# second button
+
+button2 = Button(root, text="")  
+
+
+''' 
+ 
+ 
+ #----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
+
+# Defines the content of the new window that opens on click of one of the lab squares s
+def open_new_window(data): 
+  # creates new window    Toplevel() creates a new independent window on top of all other windows (has its own title bar)
+  new_window = tk.Toplevel() 
+  new_window.title = ("New Window")   # this will be the value of the "name" key in the inserted dictionary
+
+  # display data in the new window    
+  label = tk.Label(new_window, text=data)  # data will be a dictionary 
+  lab.grid(row=0, column=0) 
+
+  # Add a close button to the new window 
+  close_button = tk.Button(new_window, text="Close", command=new_window.destroy)   
+  close_button.grid(row=1, column=0)  
+
+  # Run the mainloop for the new window
+  new_window.mainloop()  
+
+# ------------------CREATE CLICKABLE BOXES---------------------------------------  
+
+boxes = [] 
+data_list = ["Data 1", "Data 2", "Data 3"] # will hold lab dictionaries  # list is []  tuple is () > tuples are immutable
+
+# Creates buttons with custom style (change background, border, etc.) 
+for i, data in enumerate(data_list):  
+'''
+
+
+# Start the event loop
+root.mainloop()       
+
+
 
 
 
