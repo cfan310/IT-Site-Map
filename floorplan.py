@@ -824,6 +824,22 @@ button.grid(row=0, column=0)
 button2 = Button(root, text="")  
 
 
+# functoin to create and open the popup window 
+def open_popup(): 
+  # create a new top-level window  
+  popup = Toplevel(root) 
+  popup.title("Popup Window") 
+
+  # adds label with some text (and eventually
+  # will be dictionary data >> then formatted SQL data)    
+  popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
+  popup_label.grid(row=0, column=0)
+
+  # Adds a close button to the popup window 
+  close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
+  close_button.grid(row=5, column=0)  
+
+
 ''' 
  
  
