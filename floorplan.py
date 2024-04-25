@@ -1044,35 +1044,35 @@ button.grid(row=0, column=0)
  
  #----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
 
-# Defines the content of the new window that opens on click of one of the lab squares s
-def open_new_window(data): 
-  # creates new window    Toplevel() creates a new independent window on top of all other windows (has its own title bar)
-  new_window = tk.Toplevel() 
-  new_window.title = ("New Window")   # this will be the value of the "name" key in the inserted dictionary
+def open_popup_from_buttonClick(): 
+  # create a new top-level window  
+  popup = Toplevel(root)  # creates popup widget on top of other widgets
+  popup.title("Popup Window")   # title of what window will say after "click for popup" button is clicked 
 
-  # display data in the new window    
-  label = tk.Label(new_window, text=data)  # data will be a dictionary 
-  lab.grid(row=0, column=0) 
+  # adds label with some text (and eventually will be dictionary data >> then formatted SQL data)    
+  popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
+  popup_label.grid(row=0, column=0)
 
-  # Add a close button to the new window 
-  close_button = tk.Button(new_window, text="Close", command=new_window.destroy)   
-  close_button.grid(row=1, column=0)  
-
-  # Run the mainloop for the new window
-  new_window.mainloop()  
-
-# ------------------CREATE CLICKABLE BOXES---------------------------------------  
-
-boxes = [] 
-data_list = ["Data 1", "Data 2", "Data 3"] # will hold lab dictionaries  # list is []  tuple is () > tuples are immutable
-
-# Creates buttons with custom style (change background, border, etc.) 
-for i, data in enumerate(data_list):  
-'''
+  # Adds a close button to the popup window 
+  close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
+  close_button.grid(row=5, column=0)  
 
 
-# Start the event loop
-root.mainloop()       
+# button example: 
+
+button = Button(root, text="Lab 1225", command=open_popup_from_buttonClick) # command=open_popup) 
+button.grid(row=0, column=0) 
+
+def create_clickable_square(x, y, text, command):
+
+ 
+    button = tk.Button(
+        background_canvas, text=text, width=square_size, height=square_size,
+        font=("Arial", 12)
+    )
+    button.grid(row=0, column=0, padx=5, pady=5)  # Position the button using grid geometry manager
+
+    return button     
 
 # ------------------CREATE CLICKABLE BOXES---------------------------------------  
 
