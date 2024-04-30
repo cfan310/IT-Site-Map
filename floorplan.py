@@ -1060,9 +1060,12 @@ def open_popup_from_buttonClick():
 
 # button example: 
 
-button = Button(root, text="Lab 1225", command=open_popup_from_buttonClick) # command=open_popup) 
-button.grid(row=0, column=0) 
 
+# button example: 
+
+button = Button(root, text="Lab 1225 BTN", command=open_popup) # command=open_popup) 
+button.grid(row=0, column=0)  
+ 
 def create_clickable_square(x, y, text, command):
 
  
