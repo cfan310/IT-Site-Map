@@ -1044,8 +1044,27 @@ button.grid(row=0, column=0)
  
  #----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
 
-def open_popup_from_buttonClick(): 
-  # create a new top-level window  
+from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label  # button class
+import tkinter as tk
+
+ 
+
+
+def create_clickable_square(canvas, x, y, size, color, click_handler):
+
+  square_id = canvas.create_rectangle(x, y, x + size, y + size, fill=color)
+
+  # Bind the '<Button-1>' event (left mouse click) to the square
+  # bind method is used to associate an event (like a mouse click) with an action or function 
+  # here we associate the clicking of the square_id on the canvas with a click handler function. 
+  canvas.tag_bind(square_id, '<Button-1>', click_handler)
+
+  return square_id
+
+def click_handler(event):
+
+
+   # create a new top-level window  
   popup = Toplevel(root)  # creates popup widget on top of other widgets
   popup.title("Popup Window")   # title of what window will say after "click for popup" button is clicked 
 
@@ -1056,24 +1075,27 @@ def open_popup_from_buttonClick():
   # Adds a close button to the popup window 
   close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
   close_button.grid(row=5, column=0)  
+  """
+  This function is called when a square is clicked.
 
+  Args:
+      event: The Tkinter event object.
+  """
+  # Get the ID of the clicked square using event.widget.find_withtag(CURRENT)
+  clicked_id = event.widget.find_withtag(tk.CURRENT)
+  print(f"Square with ID {clicked_id} was clicked!")
 
-# button example: 
+# Example usage
+root = tk.Tk()
+canvas = tk.Canvas(root, width=400, height=300)
+canvas.pack()
 
+square1_id = create_clickable_square(canvas, 50, 50, 100, 'red', click_handler)
+square2_id = create_clickable_square(canvas, 200, 100, 75, 'blue', click_handler)
 
-# button example: 
-
-button = Button(root, text="Lab 1225 BTN", command=open_popup) # command=open_popup) 
-button.grid(row=0, column=0)  
+root.mainloop()    
  
-def create_clickable_square(x, y, text, command):
-
- 
-    button = tk.Button(
-        background_canvas, text=text, width=square_size, height=square_size,
-        font=("Arial", 12)
-    )
-    button.grid(row=0, column=0, padx=5, pady=5)  # Position the button using grid geometry manager
+0, column=0, padx=5, pady=5)  # Position the button using grid geometry manager
 
     return button     
 
