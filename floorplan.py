@@ -1051,10 +1051,25 @@ import tkinter as tk
 
 
 def create_clickable_square(canvas, x, y, size, color, click_handler):
+  """
+  Creates a clickable square on the canvas.
 
+  Args:
+      canvas: The Tkinter Canvas object.
+      x: The x-coordinate of the top-left corner of the square.
+      y: The y-coordinate of the top-left corner of the square.
+      size: The size (width and height) of the square.
+      color: The fill color of the square.
+      click_handler: The function to be called when the square is clicked.
+
+  Returns:
+      The ID of the created square object.
+  """
   square_id = canvas.create_rectangle(x, y, x + size, y + size, fill=color)
 
-
+  # Bind the '<Button-1>' event (left mouse click) to the square
+  # bind method is used to associate an event (like a mouse click) with an action or function 
+  # here we associate the clicking of the square_id on the canvas with a click handler function. 
   canvas.tag_bind(square_id, '<Button-1>', click_handler)
 
   return square_id
@@ -1064,21 +1079,23 @@ def click_handler(event):
 
    # create a new top-level window  
   popup = Toplevel(root)  # creates popup widget on top of other widgets
-  popup.title("Popup Window")   # title of what window will say after "click for popup" button is clicked 
+  popup.title("Dictionary Data")   # title of what window will say after "click for popup" button is clicked 
+  popup.geometry("500x500")
 
-  # adds label with some text (and eventually will be dictionary data >> then formatted SQL data)    
-  popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
-  popup_label.grid(row=0, column=0)
+  text_frame = tk.Frame(popup, width=300, height=300)
+  text_frame.pack(padx=10, pady=10)
+
+  # formatting of dictionary using Label
+  for key, value in lab1224data.items(): 
+    # in this case, labDictText = popup_label 
+  
+      labDictText = Label(text_frame, text=f"{key}: {value}", font=("Arial", 12)) 
+      labDictText.grid(row=0, column=0)
 
   # Adds a close button to the popup window 
   close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
-  close_button.grid(row=5, column=0)  
-  """
-  This function is called when a square is clicked.
+  close_button.grid(row=30, column=0)  
 
-  Args:
-      event: The Tkinter event object.
-  """
   # Get the ID of the clicked square using event.widget.find_withtag(CURRENT)
   clicked_id = event.widget.find_withtag(tk.CURRENT)
   print(f"Square with ID {clicked_id} was clicked!")
@@ -1092,10 +1109,6 @@ square1_id = create_clickable_square(canvas, 50, 50, 100, 'red', click_handler)
 square2_id = create_clickable_square(canvas, 200, 100, 75, 'blue', click_handler)
 
 root.mainloop()    
- 
-0, column=0, padx=5, pady=5)  # Position the button using grid geometry manager
-
-    return button     
 
 # ------------------CREATE CLICKABLE BOXES---------------------------------------  
 
