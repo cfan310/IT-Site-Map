@@ -1067,9 +1067,8 @@ def create_clickable_square(canvas, x, y, size, color, click_handler):
   """
   square_id = canvas.create_rectangle(x, y, x + size, y + size, fill=color)
 
-  # Bind the '<Button-1>' event (left mouse click) to the square
-  # bind method is used to associate an event (like a mouse click) with an action or function 
-  # here we associate the clicking of the square_id on the canvas with a click handler function. 
+# bind the button as it iterates through all labs to the click handler, which in turn will
+  # iterate through list of all labs 
   canvas.tag_bind(square_id, '<Button-1>', click_handler)
 
   return square_id
