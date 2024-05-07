@@ -1056,6 +1056,25 @@ def create_square_with_text(x, y, text):
       x, y, x + square_size, y + square_size, fill="black",
       #activefill="green" # change color on hover    
   )
+
+  # Define hover colors (adjust as desired)
+  default_color = "black"
+  hover_color = "green"
+
+  # Bind events for color change on hover (if is_hover_square is True)
+  if is_hover_square:
+      def on_enter(event):
+          background_canvas.itemconfig(square, fill=hover_color)
+
+      def on_leave(event):
+          background_canvas.itemconfig(square, fill=default_color)
+
+      background_canvas.tag_bind(square, "<Enter>", on_enter)
+      background_canvas.tag_bind(square, "<Leave>", on_leave)
+
+
+
+
   # function creates a popup window once black square is clicked 
   def display_popup(): 
     popup = tk.Toplevel(background_canvas) # creates a popup winow
