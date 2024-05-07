@@ -907,49 +907,6 @@ root.geometry(f"{window_width}x{window_height}")
 background_canvas = Canvas(root, width=window_width, height=window_height, bg="grey")       
 background_canvas.grid(row=0, column=0, sticky="nsew")  
 
-'''
-def open_popup_from_buttonClick(): 
-  # create a new top-level window  
-  popup = Toplevel(root)  # creates popup widget on top of other widgets
-  popup.title("Popup Window")   # title of what window will say after "click for popup" button is clicked 
-
-  # adds label with some text (and eventually will be dictionary data >> then formatted SQL data)    
-  popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
-  popup_label.grid(row=0, column=0)
-
-  # Adds a close button to the popup window 
-  close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
-  close_button.grid(row=5, column=0)               
-
-
-# button example: 
-
-button = Button(root, text="Lab 1225", command=open_popup_from_buttonClick) # command=open_popup) 
-button.grid(row=0, column=0) 
-
-def create_clickable_square(x, y, text, command):
-    """
-    Creates a clickable square using a tkinter button.
-
-    Args:
-        x (int): X-coordinate of the top-left corner of the square.
-        y (int): Y-coordinate of the top-left corner of the square.
-        text (str): Text to display on the button.
-        command (callable): Function to be called when the button is clicked.
-
-    Returns:
-        tk.Button: The created button object.
-    """  
-    button = tk.Button(
-        background_canvas, text=text, width=square_size, height=square_size,
-        font=("Arial", 12)
-    )
-    button.grid(row=0, column=0, padx=5, pady=5)  # Position the button using grid geometry manager
-
-    return button  
-
-#create_clickable_square(5, 5, "test button-square", open_popup_from_buttonClick)   
-'''
 
 #------------------DYNAMIC blackSquare CREATION FUNCTION -------------------------------------   
 
@@ -978,25 +935,25 @@ def create_square_with_text(x, y, text, is_hover_square=False):
       background_canvas.tag_bind(square, "<Enter>", on_enter)
       background_canvas.tag_bind(square, "<Leave>", on_leave)
 
+  def display_popup(lab_data): 
+    popup = tk.Toplevel(background_canvas)  # Create popup window
+    popup.title("LAB _____ DATA")  # Set popup title
+  
+    # Format dictionary data as text
+    formatted_text = ""
+    for key, value in lab_data.items():
+        formatted_text += f"{key}: {value}\n"  # Add newline after each key-value pair
 
+    # Display formatted text in a label within the popup
+    popup_label = tk.Label(popup, text=formatted_text, font=("Arial", 12))
+    popup_label.grid(row=0, column=0)
 
-  # function creates a popup window once black square is clicked 
-  # nee to center this popup at center of background_canvas and expand as needed to fit lab data 
-  def display_popup(): 
-    popup = tk.Toplevel(background_canvas) # creates a popup winow
-    popup.title("LAB ____ DATA WINDOW") 
-    # label used to display textual information 
-    #popup_text = "Formatted Lab Data goes here!"
-    popup_text = lab1224data.items()
-    popup_label = tk.Label(popup, text=popup_text)
-    popup_label.grid(row=0, column=0) 
-    # adds button to close the popup if desired
-    close_button = tk.Button(popup, text="Close Window", command=popup.destroy)   
-
+    # Add a close button using pack
+    close_button = tk.Button(popup, text="Close", command=popup.destroy)
     close_button.grid(row=1, column=0)  
 
     # binds the click event to the square  
-  background_canvas.tag_bind(square, "<Button-1>", lambda event: display_popup())
+  background_canvas.tag_bind(square, "<Button-1>", lambda event: display_popup(lab1224data))
 
   # center the text inside the square   
   text_id = background_canvas.create_text(
@@ -1006,7 +963,6 @@ def create_square_with_text(x, y, text, is_hover_square=False):
   ) 
   
   return square, text_id
-
 
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
@@ -1050,38 +1006,6 @@ south_hallway_width = 390
 south_hallway_height = 20
 southHallway = create_south_hallway(130, 495)  # need tto add width for west hallway 
 
-# leverage Canvas click detection 
-# canvas has inherent click detection capabilities   
-
-#--------CANVAS CLICK DETECTION FUNCTION FUNCTION-------------------------------------------
-
-#def create_clickable_square(background_canvas, x, y, size, color, click_handler):
-
-#-----------------Popup after clicking Lab Square-------------
-# need to loop thru array of formatted lab dictionary data and 
-# put specific square (lab) as parameter 
-#ex:                                             open_popup(lab1224data) (displays FORMATTED lab1224 dictionary data)
-
-'''
-def open_popup(): 
-  # create a new top-level window  
-  popup = Toplevel(root)  # creates popup widget on top of other widgets
-  popup.title("Popup Window")   # title of what window will say after "click for popup" button is clicked 
-
-  # adds label with some text (and eventually will be dictionary data >> then formatted SQL data)    
-  popup_label = Label(popup, text="This is a popup window!", font=("Arial", 12 ))
-  popup_label.grid(row=0, column=0)
-
-  # Adds a close button to the popup window 
-  close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
-  close_button.grid(row=5, column=0)  
-
-
-# button example: 
-
-button = Button(root, text="Lab 1225 BTN", command=open_popup) # command=open_popup) 
-button.grid(row=0, column=0)
-'''
 
 
 # Create squares with text (using the fixed size)     # these need to be clickable buttons
@@ -1122,65 +1046,5 @@ lab1225data = {
   "number of projectors": 1,
 } 
 
-print(lab1224data.items())
 
-# list of labs to iterate thru for button click window open and close functionality 
-labsList = [lab1224data, lab1225data]
-
-# ------------------CLICKING FUNCTIONALITY FOR LABS ---------------------------------
-
- 
-
-'''
-def create_popup(square_text):  # square_text will be the dictionairies for each lab ex. lab1224data
-  # create new top-level window
-  popup = Toplevel(root)   # (creates window atop all other windows) (paired to root window)  
-  popup.title(f"Details for {square_text}") # "Lab 1224 Data" 
-
-  # Add a label with data specific to the clicked square 
-  data_label = Label(popup, text=f"This is data related to {square_text}", font=("Arial", 12)) 
-  data_label.pack()  
-
-
-'''  
- 
-  
-
-
-
-
-''' 
- 
- 
- #----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
-
-# Defines the content of the new window that opens on click of one of the lab squares s
-def open_new_window(data): 
-  # creates new window    Toplevel() creates a new independent window on top of all other windows (has its own title bar)
-  new_window = tk.Toplevel() 
-  new_window.title = ("New Window")   # this will be the value of the "name" key in the inserted dictionary
-
-  # display data in the new window    
-  label = tk.Label(new_window, text=data)  # data will be a dictionary 
-  lab.grid(row=0, column=0) 
-
-  # Add a close button to the new window 
-  close_button = tk.Button(new_window, text="Close", command=new_window.destroy)   
-  close_button.grid(row=1, column=0)  
-
-  # Run the mainloop for the new window
-  new_window.mainloop()  
-
-# ------------------CREATE CLICKABLE BOXES---------------------------------------  
-
-boxes = [] 
-data_list = ["Data 1", "Data 2", "Data 3"] # will hold lab dictionaries  # list is []  tuple is () > tuples are immutable
-
-# Creates buttons with custom style (change background, border, etc.) 
-for i, data in enumerate(data_list):  
-'''
-
-
-# Start the event loop
-root.mainloop()    
-
+root.mainloop()  
