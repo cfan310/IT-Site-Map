@@ -961,19 +961,19 @@ southHallway = create_south_hallway(130, 495)  # need tto add width for west hal
  
 
 # Create squares with text (using the fixed size)
-square0, text0 = create_square_with_text(150, 20, "ADMIN")
-square1, text1 = create_square_with_text(130, 110, "Lab 1212")
-square6, text6 = create_square_with_text(40, 200, "Lab 1213")
-square5, text5 = create_square_with_text(40, 280, "Lab 1211")
-square4, text4 = create_square_with_text(130, 360, "Lab 1209")
-square7, text7 = create_square_with_text(40, 440, "Lab 1208")
+square0, text0 = create_square_with_text(150, 20, "ADMIN", is_hover_square=True)
+square1, text1 = create_square_with_text(130, 110, "Lab 1212", is_hover_square=True)
+square6, text6 = create_square_with_text(40, 200, "Lab 1213", is_hover_square=True)
+square5, text5 = create_square_with_text(40, 280, "Lab 1211", is_hover_square=True)
+square4, text4 = create_square_with_text(130, 360, "Lab 1209", is_hover_square=True)
+square7, text7 = create_square_with_text(40, 440, "Lab 1208", is_hover_square=True)
 
 
-square2, text2 = create_square_with_text(540, 120, "Lab 1222")
-square3, text3 = create_square_with_text(540, 230, "Lab 1224")
-square8, text8 = create_square_with_text(450, 360, "Lab 1225")
+square2, text2 = create_square_with_text(540, 120, "Lab 1222", is_hover_square=True)
+square3, text3 = create_square_with_text(540, 230, "Lab 1224", is_hover_square=True)
+square8, text8 = create_square_with_text(450, 360, "Lab 1225", is_hover_square=True)
 
-entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
+entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance", is_hover_square=False)
  
 
 # --------------SAMPLE LAB 1224 DISPLAY DATA---------------------------------------
