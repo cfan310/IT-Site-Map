@@ -1044,70 +1044,40 @@ button.grid(row=0, column=0)
  
  #----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
 
-from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label  # button class
-import tkinter as tk
 
- 
+#------------------DYNAMIC blackSquare CREATION FUNCTION -------------------------------------   
 
 
-def create_clickable_square(canvas, x, y, size, color, click_handler):
-  """
-  Creates a clickable square on the canvas.
+# Function to create and place a black square with text (for the labs) (using fixed size)
+# takes three inputs: distance from left horizontally, distance from top vertically, and the text inside the black square 
+def create_square_with_text(x, y, text):
 
-  Args:
-      canvas: The Tkinter Canvas object.
-      x: The x-coordinate of the top-left corner of the square.
-      y: The y-coordinate of the top-left corner of the square.
-      size: The size (width and height) of the square.
-      color: The fill color of the square.
-      click_handler: The function to be called when the square is clicked.
+  square = background_canvas.create_rectangle(    # start width, end width, start height, end height  (starts at x input (so if 10, dimension for the wdth will be 10 + 70, thus 80, 80 units from the left)
+      x, y, x + square_size, y + square_size, fill="black",
+      #activefill="green" # change color on hover    
+  )
+  # function creates a popup window once black square is clicked 
+  def display_popup(): 
+    popup = tk.Toplevel(background_canvas) # creates a popup winow
+    popup.title("LAB ____ DATA WINDOW") 
+    # label used to display textual information 
+    popup_label = tk.Label(popup, text="Formatted Lab Data goes here!") 
+    popup_label.grid(row=0, column=0) 
+    # adds button to close the popup if desired
+    close_button = tk.Button(popup, text="Close Window", command=popup.destroy)   
+    close_button.grid(row=0, column=0)  
 
-  Returns:
-      The ID of the created square object.
-  """
-  square_id = canvas.create_rectangle(x, y, x + size, y + size, fill=color)
+    # binds the click event to the square  
+  background_canvas.tag_bind(square, "<Button-1>", lambda event: display_popup())
 
-# bind the button as it iterates through all labs to the click handler, which in turn will
-  # iterate through list of all labs 
-  canvas.tag_bind(square_id, '<Button-1>', click_handler)
+  # center the text inside the square  
+  text_id = background_canvas.create_text(
 
-  return square_id
-
-def click_handler(event):
-
-
-   # create a new top-level window  
-  popup = Toplevel(root)  # creates popup widget on top of other widgets
-  popup.title("Dictionary Data")   # title of what window will say after "click for popup" button is clicked 
-  popup.geometry("500x500")
-
-  text_frame = tk.Frame(popup, width=300, height=300)
-  text_frame.pack(padx=10, pady=10)
-
-  # formatting of dictionary using Label
-  for key, value in lab1224data.items(): 
-    # in this case, labDictText = popup_label 
+      # we take the beginning of the far square's left side, the square's top, to center the text inside the square  
+      x + square_size / 2, y + square_size / 2, text=text, font=("Arial", 12), fill="white"
+  ) 
   
-      labDictText = Label(text_frame, text=f"{key}: {value}", font=("Arial", 12)) 
-      labDictText.grid(row=0, column=0)
-
-  # Adds a close button to the popup window 
-  close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
-  close_button.grid(row=30, column=0)  
-
-  # Get the ID of the clicked square using event.widget.find_withtag(CURRENT)
-  clicked_id = event.widget.find_withtag(tk.CURRENT)
-  print(f"Square with ID {clicked_id} was clicked!")
-
-# Example usage
-root = tk.Tk()
-canvas = tk.Canvas(root, width=400, height=300)
-canvas.pack()
-
-square1_id = create_clickable_square(canvas, 50, 50, 100, 'red', click_handler)
-square2_id = create_clickable_square(canvas, 200, 100, 75, 'blue', click_handler)
-
-root.mainloop()    
+  return square, text_id 
 
 # ------------------CREATE CLICKABLE BOXES---------------------------------------  
 
