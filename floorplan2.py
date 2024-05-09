@@ -47,9 +47,9 @@ rectangle_width = 180
 
 # Create the main window
 root = Tk() # displays the root window and manages other components. Creates instance of the tkinter frame. 
-root.title("FLOOR 12 FLOORPLAN")  # title of root (main) window \
+root.title("FLOOR 2 FLOORPLAN")  # title of root (main) window \
 # f-string (formatted string literal) allows us to embed an expression in between curly braces  
-root.geometry(f"{window_width}x{window_height}")  
+root.geometry(f"{window_width}x{window_height}")   
 
 # Create a grey canvas as the background
 background_canvas = Canvas(root, width=window_width, height=window_height, bg="grey")       
@@ -129,7 +129,9 @@ def create_west_hallway(x, y):
 
 west_hallway_width = 20
 west_hallway_height = 495
-westHallway = create_west_hallway(110, 20)  # need tto add width for west hallway
+westHallway = create_west_hallway(110, 90)  # need tto add width for west hallway
+
+# west hallway not as tall thusnincrease the y parameter
 
 def create_north_hallway(x, y):
   hallway = background_canvas.create_rectangle(
@@ -159,14 +161,18 @@ southHallway = create_south_hallway(130, 495)  # need tto add width for west hal
 
 
 
-
 # Create squares with text (using the fixed size)     # these need to be clickable buttons
-square0, text0 = create_square_with_text(150, 20, "ADMIN", lab1224data, is_hover_square=True)
+square0, text0 = create_square_with_text(70, 20, "ADMIN", lab1224data, is_hover_square=True)
 square1, text1 = create_square_with_text(130, 110, "Lab 1212", lab1224data, is_hover_square=True)
 square6, text6 = create_square_with_text(40, 200, "Lab 1213", lab1224data, is_hover_square=True)
 square5, text5 = create_square_with_text(40, 280, "Lab 1211", lab1224data, is_hover_square=True)
 square4, text4 = create_square_with_text(130, 360, "Lab 1209", lab1224data, is_hover_square=True)
 square7, text7 = create_square_with_text(40, 440, "Lab 1208", lab1208data, is_hover_square=True)
+
+square220, text220 = create_square_with_text(185, 20, "Lab 220", lab1224data, is_hover_square=True) 
+square220, text220 = create_square_with_text(320, 20, "STAFF", lab1224data, is_hover_square=True)
+square222, text223 = create_square_with_text(450, 110, "Lab 223", lab1224data, is_hover_square=True)
+
 
 
 square2, text2 = create_square_with_text(540, 120, "Lab 1222", lab1224data, is_hover_square=True)
