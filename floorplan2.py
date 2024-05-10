@@ -55,8 +55,9 @@ root.geometry(f"{window_width}x{window_height}")
 background_canvas = Canvas(root, width=window_width, height=window_height, bg="grey")       
 background_canvas.grid(row=0, column=0, sticky="nsew")  
 
-
 #------------------DYNAMIC blackSquare CREATION FUNCTION -------------------------------------   
+
+
 
 
 # Function to create and place a black square with text (for the labs) (using fixed size)
@@ -115,6 +116,7 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
   return square, text_id
 
 
+
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
   rectangle = background_canvas.create_rectangle(
     x, y, x + rectangle_width, y + rectangle_height, fill="black")
@@ -157,8 +159,6 @@ def create_south_hallway(x, y):
 south_hallway_width = 390
 south_hallway_height = 20
 southHallway = create_south_hallway(130, 495)  # need tto add width for west hallway 
-
-
 
 
 # Create squares with text (using the fixed size)     # these need to be clickable buttons
