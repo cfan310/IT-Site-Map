@@ -43,7 +43,10 @@ square_size = 70
 # fixed size for the Entrance to floor 12 
 rectangle_height = 40
 rectangle_width = 180  
+
+# alternate location
         
+
 
 # Create the main window
 root = Tk() # displays the root window and manages other components. Creates instance of the tkinter frame. 
