@@ -839,10 +839,8 @@ def open_popup():
   close_button = Button(popup, text="CLOSE BUTTON", command=popup.destroy) 
   close_button.grid(row=5, column=0)  
 
+'''          
 
-''' 
- 
- 
  #----------------BUTTON CLICK FUNCTIONALITY---------------------------------------
 
 # Defines the content of the new window that opens on click of one of the lab squares s
@@ -1062,3 +1060,4 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 
 root.mainloop() 
+
