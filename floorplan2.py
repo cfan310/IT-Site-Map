@@ -3,28 +3,10 @@ import tkinter as tk
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
-lab1224data = {
-  "name": "Lab 1224",
-  "computer model": 7040/20,
-  "number of computers": 26,
-  "printer model": "HP M605",
-  "number of printers": 1,
-  "projector model": "Dell 1510x", 
-  "number of projectors": 1,
-} 
 
-lab1225data = {
-  "name": "Lab 1225",
-  "computer model": 7224,
-  "number of computers": 13,
-  "printer model": "HP M600",
-  "number of printers": 2,
-  "projector model": "Dell 1510x", 
-  "number of projectors": 1,
-} 
 
-lab1208data = {
-  "name": "Lab 1208",
+lab208data = {
+  "name": "Lab 208",
   "computer model": "OptiPlex 790", 
   "number of computers": 17,
   "printer model": "HP LaserJet Enterprise M605dn", 
@@ -32,6 +14,9 @@ lab1208data = {
   "projector model": "Dell Projector 1550", 
   "number of projectors": 1    
 }
+
+
+
 
 # Define window size for the Root Window containing everything else
 window_width = 650
@@ -43,11 +28,8 @@ square_size = 70
 # fixed size for the Entrance to floor 12 
 rectangle_height = 40
 rectangle_width = 180  
-
-# alternate location
-        
-
-
+ 
+ 
 # Create the main window
 root = Tk() # displays the root window and manages other components. Creates instance of the tkinter frame. 
 root.title("FLOOR 2 FLOORPLAN")  # title of root (main) window \
@@ -59,8 +41,6 @@ background_canvas = Canvas(root, width=window_width, height=window_height, bg="g
 background_canvas.grid(row=0, column=0, sticky="nsew")  
 
 #------------------DYNAMIC blackSquare CREATION FUNCTION -------------------------------------   
-
-
 
 
 # Function to create and place a black square with text (for the labs) (using fixed size)
