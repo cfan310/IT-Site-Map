@@ -17,7 +17,6 @@ lab208data = {
 
 
 
-
 # Define window size for the Root Window containing everything else
 window_width = 650
 window_height = 650
@@ -145,22 +144,22 @@ southHallway = create_south_hallway(130, 495)  # need tto add width for west hal
 
 
 # Create squares with text (using the fixed size)     # these need to be clickable buttons
-square0, text0 = create_square_with_text(70, 20, "ADMIN", lab1224data, is_hover_square=True)
-square1, text1 = create_square_with_text(130, 110, "Lab 1212", lab1224data, is_hover_square=True)
-square6, text6 = create_square_with_text(40, 200, "Lab 1213", lab1224data, is_hover_square=True)
-square5, text5 = create_square_with_text(40, 280, "Lab 1211", lab1224data, is_hover_square=True)
-square4, text4 = create_square_with_text(130, 360, "Lab 1209", lab1224data, is_hover_square=True)
-square7, text7 = create_square_with_text(40, 440, "Lab 1208", lab1208data, is_hover_square=True)
+square0, text0 = create_square_with_text(70, 20, "ADMIN", lab208data, is_hover_square=True)
+square1, text1 = create_square_with_text(130, 110, "Lab 1212", lab208data, is_hover_square=True)
+square6, text6 = create_square_with_text(40, 200, "Lab 1213", lab208data, is_hover_square=True)
+square5, text5 = create_square_with_text(40, 280, "Lab 1211", lab208data, is_hover_square=True)
+square4, text4 = create_square_with_text(130, 360, "Lab 1209", lab208data, is_hover_square=True)
+square7, text7 = create_square_with_text(40, 440, "Lab 1208", lab208data, is_hover_square=True)
 
-square220, text220 = create_square_with_text(185, 20, "Lab 220", lab1224data, is_hover_square=True) 
-square220, text220 = create_square_with_text(320, 20, "STAFF", lab1224data, is_hover_square=True)
-square222, text223 = create_square_with_text(450, 110, "Lab 223", lab1224data, is_hover_square=True)
+square220, text220 = create_square_with_text(185, 20, "Lab 220", lab208data, is_hover_square=True) 
+square220, text220 = create_square_with_text(320, 20, "STAFF", lab208data, is_hover_square=True)
+square222, text223 = create_square_with_text(450, 110, "Lab 223", lab208data, is_hover_square=True)
 
 
 
-square2, text2 = create_square_with_text(540, 120, "Lab 1222", lab1224data, is_hover_square=True)
-square3, text3 = create_square_with_text(540, 230, "Lab 1224", lab1224data, is_hover_square=True)
-square8, text8 = create_square_with_text(450, 360, "Lab 1225", lab1225data, is_hover_square=True)
+square2, text2 = create_square_with_text(540, 120, "Lab 1222", lab208data, is_hover_square=True)
+square3, text3 = create_square_with_text(540, 230, "Lab 1224", lab208data, is_hover_square=True)
+square8, text8 = create_square_with_text(450, 360, "Lab 1225", lab208data, is_hover_square=True)
  
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
