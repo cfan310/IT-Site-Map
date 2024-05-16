@@ -158,7 +158,7 @@ southHallway = create_south_hallway(130, 495)  # need tto add width for west hal
 
 
 # Create squares with text (using the fixed size)     # these need to be clickable buttons
-square0, text0 = create_square_with_text(70, 20, "ADMIN", lab208data, is_hover_square=True)
+square0, text0 = create_square_with_text(80, 20, "ADMIN", lab208data, is_hover_square=True)
 square1, text1 = create_square_with_text(130, 110, "Lab 214", lab208data, is_hover_square=True)
 square6, text6 = create_square_with_text(40, 200, "Lab 215", lab208data, is_hover_square=True)
 square5, text5 = create_square_with_text(40, 280, "Lab 212", lab208data, is_hover_square=True)
