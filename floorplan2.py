@@ -15,7 +15,6 @@ lab212data = {
 }
 
 
-
 lab208data = {
   "name": "Lab 208",
   "computer model": "OptiPlex 790", 
@@ -25,7 +24,24 @@ lab208data = {
   "projector model": "Dell Projector 1550", 
   "number of projectors": 1    
 }
- 
+
+lab1222data = {
+  "name": "Lab 1222",
+  #"student computer model": "OptiPlex 790", 
+  "instructor computer model": "OptiPlex 7040", 
+  "number of instructor computers": 1, 
+  "number of projecor"
+  "printer model": "HP LaserJet Enterprise M605dn", 
+  "number of printers": 1,
+  "projector model": "Dell Projector 1550", 
+  "number of projectors": 1  
+} 
+
+staffData = { 
+
+
+}
+  
 
 # Define window size for the Root Window containing everything else
 window_width = 650
@@ -37,7 +53,6 @@ square_size = 70
 # fixed size for the Entrance to floor 12 
 rectangle_height = 40
 rectangle_width = 180  
-    
 
  
 # Create the main window
@@ -61,6 +76,9 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
       x, y, x + square_size, y + square_size, fill="black",
       #activefill="green" # change color on hover    
   )
+
+
+
 
   # Define hover colors (adjust as desired)
   default_color = "black"
@@ -107,7 +125,8 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
   ) 
   
   return square, text_id
- 
+
+  
 
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
@@ -139,8 +158,6 @@ northHallway = create_north_hallway(130, 90)  # need tto add width for west hall
 def create_east_hallway(x, y):
   hallway = background_canvas.create_rectangle(
     x, y, x + east_hallway_width, y + east_hallway_height,  fill="turquoise")  
-
-
 
 
 
