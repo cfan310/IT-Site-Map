@@ -16,13 +16,7 @@ lab212data = {
 
 
 lab208data = {
-  "name": "Lab 208",
-  "computer model": "OptiPlex 790", 
-  "number of computers": 17,
-  "printer model": "HP LaserJet Enterprise M605dn", 
-  "number of printers": 1,
-  "projector model": "Dell Projector 1550", 
-  "number of projectors": 1    
+  "number of computers" : "empty"   
 }
 
 lab1222data = {
@@ -37,11 +31,13 @@ lab1222data = {
   "number of projectors": 1  
 } 
 
+
+
 staffData = { 
+ 
 
+}  
 
-}
-  
 
 # Define window size for the Root Window containing everything else
 window_width = 650
@@ -76,8 +72,11 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
       x, y, x + square_size, y + square_size, fill="black",
       #activefill="green" # change color on hover    
   )
-
-
+ 
+# tomorrow go thru finances and construct detailed plan incuding weekend plan.
+# get into habit of oding cert work onw eekends. with sound and sober mind, post workout,
+# go thru sec+ book, GET CERT, get ccna, then build homelab and do projects
+# at the office, azure stuff, and youll be perfectly pos
 
 
   # Define hover colors (adjust as desired)
