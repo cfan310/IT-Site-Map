@@ -53,11 +53,10 @@ lab1222data = {
 
 lab1227data = {
   "name": "Lab 1222",
-  #"student computer model": "OptiPlex 790", 
-  "instructor computer model": "OptiPlex 7040", 
-  "number of instructor computers": 1, 
-  "number of projecor"
-  "printer model": "HP LaserJet Enterprise M605dn", 
+  #"student computer model": "OptiPlex 7400", 
+  "instructor computer model": "OptiPlex 7400", 
+  "number of instructor computers": 2, 
+
   "number of printers": 1,
   "projector model": "Dell Projector 1550", 
   "number of projectors": 1  
