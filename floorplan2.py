@@ -112,11 +112,7 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
       x, y, x + square_size, y + square_size, fill="black",
       #activefill="green" # change color on hover    
   )
- 
-# tomorrow go thru finances and construct detailed plan incuding weekend plan.
-# get into habit of oding cert work onw eekends. with sound and sober mind, post workout,
-# go thru sec+ book, GET CERT, get ccna, then build homelab and do projects
-# at the office, azure stuff, and youll be perfectly pos
+
 
 
   # Define hover colors (adjust as desired)
@@ -237,4 +233,4 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 root.mainloop() 
  
-# adjust lab positioning
+#
