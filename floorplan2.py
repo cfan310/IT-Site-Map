@@ -114,6 +114,9 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
   )
 
 
+  # NEXT STEP to add png to the popup, under the labDict data
+
+
 
   # Define hover colors (adjust as desired)
   default_color = "black"
@@ -232,5 +235,4 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 
 root.mainloop() 
- 
-#
+  
