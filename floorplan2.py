@@ -116,6 +116,7 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
 
   # NEXT STEP to add png to the popup, under the labDict data
 
+# then sql connect
 
 
   # Define hover colors (adjust as desired)
@@ -164,7 +165,6 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
   
   return square, text_id
 
-  
 
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
@@ -196,7 +196,6 @@ northHallway = create_north_hallway(130, 90)  # need tto add width for west hall
 def create_east_hallway(x, y):
   hallway = background_canvas.create_rectangle(
     x, y, x + east_hallway_width, y + east_hallway_height,  fill="turquoise")  
-
 
 
 east_hallway_width = 20
