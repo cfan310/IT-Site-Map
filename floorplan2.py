@@ -114,11 +114,6 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
   )
 
 
-  # NEXT STEP to add png to the popup, under the labDict data
-
-# then sql connect
-
-
   # Define hover colors (adjust as desired)
   default_color = "black"
   hover_color = "lime"
@@ -133,38 +128,10 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
 
       background_canvas.tag_bind(square, "<Enter>", on_enter)
       background_canvas.tag_bind(square, "<Leave>", on_leave)
-
-  def display_popup(lab_data): 
-    popup = tk.Toplevel(background_canvas)  # Create popup window
-    popup.title("LAB _____ DATA")  # Set popup title
   
-    # Format dictionary data as text
-    formatted_text = ""
-    font = ("Helvetica", 12, "bold")  # Font for keys
+ 
 
-    for key, value in lab_data.items():
-        formatted_text += f"{key}: {value}\n"  # Add newline after each key-value pair
-
-    # Display formatted text in a label within the popup
-    popup_label = tk.Label(popup, text=formatted_text, font=font)
-    popup_label.grid(row=0, column=0)
-
-    # Add a close button using pack
-    close_button = tk.Button(popup, text="Close", command=popup.destroy)
-    close_button.grid(row=1, column=0)  
-
-    # binds the click event to the square       # he we call the function with the parameter corresponding to the specific lab dictionary
-  background_canvas.tag_bind(square, "<Button-1>", lambda event: display_popup(labDict))
-
-  # center the text inside the square   
-  text_id = background_canvas.create_text(
-
-      # we take the beginning of the far square's left side, the square's top, to center the text inside the square  
-      x + square_size / 2, y + square_size / 2, text=text, font=("Arial", 12), fill="white"
-  ) 
-  
-  return square, text_id
-
+def data_window():
 
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
