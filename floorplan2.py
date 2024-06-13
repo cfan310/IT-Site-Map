@@ -36,8 +36,8 @@ lab214data = {
   "projector model": "Dell Projector 1550", 
   "number of projectors": 1  
   
-}
-
+} 
+ 
 lab1222data = {
   "name": "Lab 1222",
   #"student computer model": "OptiPlex 790", 
@@ -131,7 +131,10 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
   
  
 
+
 def data_window():
+  # include feed of sql results 
+  # include formatted list of output of user input 
 
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
