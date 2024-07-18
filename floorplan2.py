@@ -134,7 +134,10 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
 
 def data_window():
   # include feed of sql results 
-  # include formatted list of output of user input 
+  # include formatted list of output of user input  
+
+
+# sql table
 
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
