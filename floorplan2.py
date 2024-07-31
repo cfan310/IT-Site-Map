@@ -131,14 +131,14 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
   
  
 
-
+'''
 def data_window():
   # include feed of sql results 
   # include formatted list of output of user input  
 
 
 # sql table
-
+'''
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
   rectangle = background_canvas.create_rectangle(
@@ -205,6 +205,8 @@ square8, text8 = create_square_with_text(450, 360, "Lab 227", lab208data, is_hov
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
 
+# updated squres need debugging
 
 root.mainloop() 
-  
+   
+
