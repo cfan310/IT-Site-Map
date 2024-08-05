@@ -3,7 +3,9 @@ import tkinter as tk
 import sqlite3
  
 def create_table():
-  
+  # lightweight in-app table to contain all of the lab object data 
+    # will allow for editing creation and deletion 
+
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
