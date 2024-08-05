@@ -1,5 +1,9 @@
 from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label  # button class
 import tkinter as tk
+import sqlite3
+ 
+def create_table():
+  
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
@@ -206,6 +210,7 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 
 # updated squres need debugging
+
 
 root.mainloop() 
    
