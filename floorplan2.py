@@ -98,7 +98,7 @@ square_size = 70
 rectangle_height = 40
 rectangle_width = 180  
 
- 
+
 # Create the main window
 root = Tk() # displays the root window and manages other components. Creates instance of the tkinter frame. 
 root.title("FLOOR 2 FLOORPLAN")  # title of root (main) window \
@@ -114,6 +114,7 @@ background_canvas.grid(row=0, column=0, sticky="nsew")
 
 # Function to create and place a black square with text (for the labs) (using fixed size)
 # takes three inputs: distance from left horizontally, distance from top vertically, and the text inside the black square 
+  # other two inputs: labDict to add hard coded lab dictionary, and hover bool to make labs green on hover
 def create_square_with_text(x, y, text, labDict, is_hover_square=False):
 
   square = background_canvas.create_rectangle(    # start width, end width, start height, end height  (starts at x input (so if 10, dimension for the wdth will be 10 + 70, thus 80, 80 units from the left)
@@ -135,13 +136,12 @@ def create_square_with_text(x, y, text, labDict, is_hover_square=False):
           background_canvas.itemconfig(square, fill=default_color)
 
       background_canvas.tag_bind(square, "<Enter>", on_enter)
-      background_canvas.tag_bind(square, "<Leave>", on_leave)
+      background_canvas.tag_bind(square, "<Leave>", on_leave) 
   
- 
 
 '''
 def data_window():
-  # include feed of sql results 
+  # include feed of sql results  
   # include formatted list of output of user input  
 
 
@@ -218,4 +218,3 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 root.mainloop() 
    
-
