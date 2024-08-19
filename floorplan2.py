@@ -81,6 +81,10 @@ lab1228data = {
   "number of projectors": 1  
 } 
 
+adminData = {
+  
+}
+
 staffData = { 
  
 
