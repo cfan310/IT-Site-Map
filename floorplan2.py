@@ -82,6 +82,8 @@ lab1228data = {
 } 
 
 adminData = {
+  'name': "ex. name"
+  'position': "staff"
   
 }
 
@@ -89,6 +91,7 @@ staffData = {
  
 
 }  
+
 
 
 # Define window size for the Root Window containing everything else
