@@ -152,7 +152,6 @@ def data_window():
   # include formatted list of output of user input  
 
 
-# sql table
 '''
 
 def create_rectangle_with_text(x, y, text):           # create_rectangle() a built-in tkinter method 
