@@ -222,5 +222,5 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 # updated squres need debugging
 
 
-root.mainloop() 
+#root.mainloop() 
    
