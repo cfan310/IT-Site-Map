@@ -7,6 +7,8 @@ import sqlite3
 def create_table():
   # lightweight in-app table to contain all of the lab object data 
     # will allow for editing creation and deletion 
+
+    # tabel to be dynamically tested in sqlite then connected and mapped to MySQL db server using SQLAlchemy
 '''
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
