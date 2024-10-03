@@ -221,6 +221,8 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 # updated squres need debugging
 
+# remove to refractor with new classes and map with SQLAlchemy
+
 
 #root.mainloop() 
    
