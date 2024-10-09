@@ -225,7 +225,7 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 # incorporates powershell to create dynamic exportable excel sheets 
 
-
+# ps embedded (or option to alter using GUI)
 
 
 #root.mainloop() 
