@@ -215,7 +215,9 @@ square222, text223 = create_square_with_text(450, 110, "Lab 223", lab208data, is
 square2, text2 = create_square_with_text(540, 120, "Lab 224", lab208data, is_hover_square=True)
 square3, text3 = create_square_with_text(540, 230, "Lab 225", lab208data, is_hover_square=True)
 square8, text8 = create_square_with_text(450, 360, "Lab 227", lab208data, is_hover_square=True)
- 
+square9, text9 = create_square_with_text(450, 360, "Lab 227", lab208data, is_hover_square=True)
+
+
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
 
