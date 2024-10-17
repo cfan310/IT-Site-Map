@@ -219,6 +219,8 @@ square8, text8 = create_square_with_text(450, 360, "Lab 227", lab208data, is_hov
 entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entrance")
 
 
+
+
 # updated squres need debugging
 
 # remove to refractor with new classes and map with SQLAlchemy
@@ -227,6 +229,9 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 # ps embedded (or option to alter using GUI)
 
+# new structure for lab objects
+
 
 #root.mainloop() 
+   
    
