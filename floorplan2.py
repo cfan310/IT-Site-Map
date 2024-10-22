@@ -15,6 +15,15 @@ conn = sqlite3.connect('inventorytest.db')
 
 cursor = conn.cursor()
 
+# create the to do list table
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS tasks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        computer_name TEXT NOT NULL, 
+        serial_number VARCHAR NOT NULL,
+        created_at TEXT DEFAULT CURRENT_TIMESTAMP
+)
+''')
 
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
