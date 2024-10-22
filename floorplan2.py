@@ -13,6 +13,8 @@ import sqlite3
 
 conn = sqlite3.connect('inventorytest.db') 
 
+cursor = conn.cursor()
+
 
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
