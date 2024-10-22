@@ -9,6 +9,12 @@ import sqlite3
 
 '''
 
+# sqlite test table
+
+conn = sqlite3.connect('inventorytest.db') 
+
+
+
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
 lab212data = {
