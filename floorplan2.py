@@ -25,6 +25,17 @@ CREATE TABLE IF NOT EXISTS tasks (
 )
 ''')
 
+# second table 
+
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS tasks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, 
+        computer_name TEXT NOT NULL, 
+        serial_number VARCHAR NOT NULL,
+        created_at TEXT DEFAULT CURRENT_TIMESTAMP
+)
+''')
+
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
@@ -240,15 +251,6 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 
 
-# updated squres need debugging
-
-# remove to refractor with new classes and map with SQLAlchemy
-
-# incorporates powershell to create dynamic exportable excel sheets 
-
-# ps embedded (or option to alter using GUI)
-
-# new structure for lab objects
 
 
 #root.mainloop() 
