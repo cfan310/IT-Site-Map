@@ -36,6 +36,24 @@ CREATE TABLE IF NOT EXISTS tasks (
 )
 ''')
 
+def create_inventory_table():
+    conn = sqlite3.connect('inventory.db') 
+    cursor = conn.cursor() 
+    cursor.execute('''
+            CREATE ABLE IF NOT EXISTS inventory_data (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    user_name TEXT, 
+                    department TEXT,
+                    model TEXT,
+                    serial_number TEXT UNIQUE
+                 )
+
+    ''')
+  
+    conn.commit()
+
+    conn.close() 
+
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
