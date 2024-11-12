@@ -2,57 +2,12 @@
 #import tkinter as tk   redundant
 from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label
 import sqlite3
+
+
+
+# sqlite test table goes here
+
  
-'''
-
-# rem table func
-
-'''
-
-# sqlite test table
-
-conn = sqlite3.connect('inventorytest.db') 
-
-cursor = conn.cursor()
-
-# create the to do list table
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS tasks (
-        id INTEGER PRIMARY KEY AUTOINCREMENT, 
-        computer_name TEXT NOT NULL, 
-        serial_number VARCHAR NOT NULL,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP
-)
-''')
-
-# second table 
-
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS tasks (
-        id INTEGER PRIMARY KEY AUTOINCREMENT, 
-        computer_name TEXT NOT NULL, 
-        serial_number VARCHAR NOT NULL,
-        created_at TEXT DEFAULT CURRENT_TIMESTAMP
-)
-''')
-
-def create_inventory_table():
-    conn = sqlite3.connect('inventory.db') 
-    cursor = conn.cursor() 
-    cursor.execute('''
-            CREATE ABLE IF NOT EXISTS inventory_data (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    user_name TEXT, 
-                    department TEXT,
-                    model TEXT,
-                    serial_number TEXT UNIQUE
-                 )
-
-    ''')
-  
-    conn.commit()
-
-    conn.close() 
 
 
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
