@@ -21,6 +21,13 @@ cursor.execute('''
     )
 ''') 
 
+def add_task1(item):
+    cursor.execute('''
+        INSERT INTO inventory (user_name, department, model, serial_number)
+        VALUES (?, ?, ?, ?)
+''', item)
+    conn.commit()
+
  
 
 
