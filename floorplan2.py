@@ -21,6 +21,7 @@ cursor.execute('''
     )
 ''') 
 
+# add task table (for sampling dataflow and structure. eventually will map PostGRE db to Excel sheet and to Tkinter GUI using SQLAlchemy
 def add_task1(item):
     cursor.execute('''
         INSERT INTO inventory (user_name, department, model, serial_number)
