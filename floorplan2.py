@@ -4,8 +4,22 @@ from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label
 import sqlite3
 
 
-
+# will incorporate LUMU API to analyze all endpoints in real-time
 # sqlite test table goes here
+conn = sqlite3.connect('inventorydatabase.db') 
+cursor = conn.cursor() 
+
+# creates the table 
+# maps to excel sheet and eventually Azure PostGRESQL 
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS inventory (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_name TEXT, 
+        department TEXT,
+        model TEXT,
+        serial_number TEXT
+    )
+''') 
 
  
 
