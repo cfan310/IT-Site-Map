@@ -6,6 +6,7 @@ import sqlite3
 
 # will incorporate LUMU API to analyze all endpoints in real-time
 # sqlite test table goes here
+# GUI will store SQL statements as objects > buttons
 conn = sqlite3.connect('inventorydatabase.db') 
 cursor = conn.cursor() 
 
