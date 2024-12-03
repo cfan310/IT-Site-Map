@@ -250,6 +250,6 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 
 
-#root.mainloop() 
+root.mainloop() 
    
    
