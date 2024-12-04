@@ -8,6 +8,9 @@ import sqlite3
 # sqlite test table goes here
 # GUI will store SQL statements as objects > buttons 
 # will allow gui users to alter data on a backup db, but will run a function on master db to ensure data integrity.
+
+# mappig with sqlalchemy. A for interior floorplan, and B for analytics (from function-executed sql cmds upon lab button press)
+
 conn = sqlite3.connect('inventorydatabase.db') 
 cursor = conn.cursor() 
 
@@ -105,7 +108,7 @@ lab1228data = {
   "projector model": "Dell Projector 1550", 
   "number of projectors": 1  
 } 
-
+'''
 adminData = {
   'name': "ex. name"
   'position': "staff"
@@ -115,7 +118,7 @@ adminData = {
 staffData = { 
  
 
-}  
+} ''' 
 
 
 
