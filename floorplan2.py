@@ -81,6 +81,25 @@ lab1222data = {
   "number of projectors": 1  
 } 
 
+'''
+def numOfComps():
+  sql object mapping functionality
+  set the output of the SQL command so it matches a value
+  output the value
+  eventually allow for the updating (of a backup file) directly from the GUI
+          but only with an IT Administrator password, and ensure backup saving functionaltiy
+
+'''
+
+lab1224data = {
+  "name": "Lab 1224",
+  "computer model": 7040/20,
+  "number of computers": 26,
+  "printer model": "HP M605",
+  "number of printers": 1,
+  "projector model": "Dell 1510x", 
+  "number of projectors": 1,
+} 
 
 lab1227data = {
   "name": "Lab 1222",
