@@ -3,7 +3,7 @@
 from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label
 import sqlite3
 
-
+# pgadmin to manage postgresql db
 
 
 conn = sqlite3.connect('inventorydatabase.db') 
