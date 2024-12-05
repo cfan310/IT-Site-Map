@@ -4,12 +4,7 @@ from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label
 import sqlite3
 
 
-# will incorporate LUMU API to analyze all endpoints in real-time
-# sqlite test table goes here
-# GUI will store SQL statements as objects > buttons 
-# will allow gui users to alter data on a backup db, but will run a function on master db to ensure data integrity.
 
-# mappig with sqlalchemy. A for interior floorplan, and B for analytics (from function-executed sql cmds upon lab button press)
 
 conn = sqlite3.connect('inventorydatabase.db') 
 cursor = conn.cursor() 
