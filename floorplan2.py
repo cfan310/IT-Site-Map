@@ -89,6 +89,11 @@ def numOfComps():
   eventually allow for the updating (of a backup file) directly from the GUI
           but only with an IT Administrator password, and ensure backup saving functionaltiy
 
+will create powershell function to iterate through excel list, collect individual data
+  of each ID, then dynamically create python object for each inventory resource
+
+  to then map to the crowdstrike falconsense EDR API and allow GUI users to get individualized
+    cyber AND inventory update information 
 '''
 
 lab1224data = {
