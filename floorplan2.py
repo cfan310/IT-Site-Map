@@ -149,6 +149,9 @@ def showABoptions(optionsFileData)
 
 result = ABoptions.showABoptions(optionsFileData)
 fileData = 
+# will add another file with all endpoint objects with their direct integration
+  # to the local postgresql db (and eventually azure ostgresql db)
+  # formatted in the main file?
 
 
 # Define window size for the Root Window containing everything else
