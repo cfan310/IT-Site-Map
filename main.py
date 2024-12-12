@@ -8,14 +8,13 @@ import sqlalchemy
 # The ENGINE is a global object created just once for a db server
 	# Our PostgreSQL db server will be stored locally and eventually migrated and hosted on Azure cloud. 
 
-# excel db CSV file path: "C:\Users\Connor Fanning\Python\SQLAlchemy\ML12Db.xlsx"
+# excel db CSV file path: "C:\Users\First Last\Python\SQLAlchemy\ML12Db.xlsx"
 
-# sql db file path: "C:\Users\Connor Fanning\Python\SQLAlchemy\ML12SQL.sql"
+# sql db file path: "C:\Users\First Last\Python\SQLAlchemy\ML12SQL.sql"
 
 # need to now restart computer, and then create sgl db thru excel csv (they need to be linked) 
 	# then load 1224 data into option B (analytics) for that popup, and format it
-		# later add animations. BE CREATIVE. have fun. stay focused. cut out the noise.
-
+		# later add animations. 
     # Temporary305 sql db  
 
 	
