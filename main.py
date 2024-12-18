@@ -285,6 +285,7 @@ square2, text2 = create_square_with_text(540, 120, "Lab 1222", lab1224data, is_h
 # and ABoptions.py links to another import that will contain the 1224 seating chart, where we will hard code it and allow for popup windows and BACK BUTTONS
 # Implement BACK buttons to fill the window instead of window popups for more code clarity.    
 
+# separate object linking file
 '''
 import ABoptions
 
