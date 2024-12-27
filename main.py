@@ -37,6 +37,10 @@ lab1208data = {
 # a SQL SELCT * FROM and then filter to only ALL of the data from Lab 1209
 # and it will open a new popup window (in 1.0 version) with the data from the SQL db
 
+# separate file for object mapping
+# every endpoint will be an object
+# script to write code to automate object creation for the hard-coded part
+
 
 lab1209data = {
   "total computers": 0,
