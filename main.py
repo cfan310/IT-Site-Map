@@ -3,6 +3,15 @@ import tkinter as tk
 
 import sqlalchemy
 
+#---As of right now, the 1224 seating chart and 1224 analytics window opens first
+# clicking either button does nothing
+# closing window then opens the main floor 12 floorplan window
+# lab 1209 click works
+  # other lab clicks dont work and following error is issued:
+#     for key, value in lab_data.items():
+ #                     ^^^^^^^^^^^^^^
+#      AttributeError: 'set' object has no attribute 'items'
+
 #----------------------DATABASE CONNECTION-----------------------------------
 
 # The ENGINE is a global object created just once for a db server
@@ -41,7 +50,7 @@ lab1208data = {
 # separate file for object mapping
 # every endpoint will be an object
 # script to write code to automate object creation for the hard-coded part
-
+ 
 
 lab1209data = {
   "total computers": 0,
