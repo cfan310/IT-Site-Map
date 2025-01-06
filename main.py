@@ -17,6 +17,7 @@ import sqlalchemy
 		# later add animations. 
     # Temporary305 sql db  
 
+# code is broken; lab icons do not open on click
 	
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
