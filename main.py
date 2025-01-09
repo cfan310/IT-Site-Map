@@ -12,6 +12,7 @@ import sqlalchemy
  #                     ^^^^^^^^^^^^^^
 #      AttributeError: 'set' object has no attribute 'items'
 
+
 #----------------------DATABASE CONNECTION-----------------------------------
 
 # The ENGINE is a global object created just once for a db server
@@ -27,7 +28,16 @@ import sqlalchemy
     # Temporary305 sql db  
 
 # code is broken; lab icons do not open on click
-	
+
+# ------------------------ multi-page flow for mvc arch VIEW component------------------
+'''
+class PageFlow(tk.Tk):
+    def __init__(self, *args, **kwargs):
+        tk.Tk.__init__(self, *args, **kwargs)
+        self.title("MAIN WINDOW")
+
+    
+	'''
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
 
