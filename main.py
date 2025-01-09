@@ -36,6 +36,14 @@ class PageFlow(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
         self.title("MAIN WINDOW")
 
+# creates container for btns to navigate to other pages 
+
+container = tk.Frame(self)
+container.grid(row=0, column=0, sticky="nsew") 
+container.grid_rowconfigure(0, weight=1)
+container.grid_columnconfigure(0, weight=1)
+self.geometry("1000x1000") 
+
     
 	'''
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
