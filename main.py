@@ -38,6 +38,8 @@ class PageFlow(tk.Tk):
 
 # creates container for btns to navigate to other pages 
 
+# displayed in the V module 
+
 container = tk.Frame(self)
 container.grid(row=0, column=0, sticky="nsew") 
 container.grid_rowconfigure(0, weight=1)
