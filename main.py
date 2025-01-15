@@ -3,6 +3,17 @@ import tkinter as tk
 
 import sqlalchemy
 
+''' file structure
+├── models/
+│   ├── __init__.py
+│   ├── endpoint.py
+ 
+
+
+
+'''
+
+
 #---As of right now, the 1224 seating chart and 1224 analytics window opens first
 # clicking either button does nothing
 # closing window then opens the main floor 12 floorplan window
