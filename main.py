@@ -12,7 +12,7 @@ import sqlalchemy
 # url-searchable at each api endpoint
 
 # powershell searchables for OS details
-
+# will match ManageENGINE SERIAL number API 
 
 '''
 
