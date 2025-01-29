@@ -11,6 +11,9 @@ import sqlalchemy
 
 # url-searchable at each api endpoint
 
+# powershell searchables for OS details
+
+
 '''
 
 
@@ -134,7 +137,7 @@ def numOfComps():
 
 
 
-import ABoptions
+#import ABoptions
 
 '''
   "name": "Lab 1224",
@@ -149,7 +152,7 @@ import ABoptions
 lab1224data = {
    ABoptions    # stored as object  ONLY OPEN IF CLICKED. Right now it is opening BEFORE the mainTest code. 
 } 
-
+'''
 lab1225data = {
 
   "name": "Lab 1225",
@@ -338,7 +341,7 @@ def showABoptions(optionsFileData)
    # open the ABoptons first as a window, but THEN just fill the screen with it and incorporate a BACK button 
 
 result = ABoptions.showABoptions(optionsFileData)
-fileData = 
+#fileData = 
 ''' 
  
 
