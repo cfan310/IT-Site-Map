@@ -2,6 +2,8 @@ from tkinter import Tk, Frame, Canvas, Button, Toplevel, Label  # button class
 import tkinter as tk
 
 import sqlalchemy
+import numpy
+
 
 ''' file structure
 ├── models/
