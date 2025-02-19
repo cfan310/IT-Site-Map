@@ -4,6 +4,8 @@ import tkinter as tk
 import sqlalchemy
 import numpy
 
+# manage engine token and secret stored for future access for inventory endpoints
+
 
 ''' file structure
 ├── models/
@@ -46,7 +48,7 @@ import numpy
 # code is broken; lab icons do not open on click
 
 # ------------------------ multi-page flow for mvc arch VIEW component------------------
-'''
+
 class PageFlow(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
@@ -63,7 +65,7 @@ container.grid_columnconfigure(0, weight=1)
 self.geometry("1000x1000") 
 
     
-	'''
+	
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
 
 
@@ -135,7 +137,7 @@ def numOfComps():
   eventually allow for the updating (of a backup file) directly from the GUI
           but only with an IT Administrator password, and ensure backup saving functionaltiy
 
-'''
+
 
 
 
