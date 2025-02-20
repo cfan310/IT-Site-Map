@@ -6,6 +6,8 @@ import numpy
 
 # manage engine token and secret stored for future access for inventory endpoints
 
+# API structure for ManageEngine: <Server URL>/api/{Version}/{Entity}/{Operation|Action}/<Resource>/<Filter>/<Page tags>/<Search tags>
+
 
 ''' file structure
 ├── models/
