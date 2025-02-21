@@ -373,9 +373,27 @@ import os
 
 class IPAddressTracker:
     def __init__(self):
-        self.api_token = os.environ.get("IP_ADDRESS_API_TOKEN")  # Environment variable
-        self.api_url = "https://ip-tracker-service.com/api/v1"  # Base URL
+        self.api_token = os.environ.get("IP_ADDRESS_API_TOKEN")  # Env var referring to OS storage of API token
+        self.api_url = "<Server URL>/api/{Version}/{Entity}/{Operation|Action}/<Resource>/<Filter>/<Page tags>/<Search tags>"  # Base URL
         if not self.api_token:
             raise ValueError("IP_ADDRESS_API_TOKEN environment variable not set.")
 
-    
+    def get_ip_address(self, item_id):  # item_id from Manage Engine inventory system
+        headers = {"Authorization": f"Bearer {self.api_token}"}
+        url = f"{self.api_url}/items/{item_id}/ip_address" # Example endpoint
+        response = requests.get(url, headers=headers)
+        # ... (Handle response, error checking, JSON parsing as before)
+        if response.status_code == 200:
+             try:
+                 data = response.json()
+                 ip_address = data.get("ip_address")
+                 return ip_address
+             except json.JSONDecodeError:
+                 print("Error: Invalid JSON response from API")
+                 return None
+        else:
+             print(f"Error: API request failed with status code {response.status_code}")
+             # Prints the error message from the API
+             print(response.text) 
+             return None
+        # ...
