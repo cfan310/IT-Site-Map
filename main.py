@@ -362,3 +362,20 @@ entrance_rectangle, text_rectangle = create_rectangle_with_text(250, 455, "Entra
 
 
 root.mainloop()  
+
+
+# api handling clas (model) manage engine class
+
+# for endpoint IP addresses as example 
+
+import requests
+import os
+
+class IPAddressTracker:
+    def __init__(self):
+        self.api_token = os.environ.get("IP_ADDRESS_API_TOKEN")  # Environment variable
+        self.api_url = "https://ip-tracker-service.com/api/v1"  # Base URL
+        if not self.api_token:
+            raise ValueError("IP_ADDRESS_API_TOKEN environment variable not set.")
+
+    
