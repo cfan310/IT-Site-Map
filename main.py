@@ -397,3 +397,19 @@ class IPAddressTracker:
              print(response.text) 
              return None
         # ...
+# local database of IP addresses will be kep
+  # in synchronizatio with Manafge Engine IP Addresses
+    # from API from ME agent instlled on every endpoint 
+
+  #
+  '''
+  ex. JSON response
+  to be formatted into the GUI 
+  only accessible with admin password
+  linked via sqlalchemy 
+  [
+  {"item_id": 1, "ip_address": "192.168.1.100"},
+  {"item_id": 2, "ip_address": "192.168.1.101"},
+  {"item_id": 3, "ip_address": "10.0.0.50"},
+  // ... more items
+]'''
