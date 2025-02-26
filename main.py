@@ -20,6 +20,29 @@ import numpy
 # powershell searchables for OS details
 # will match ManageENGINE SERIAL number API 
 
+# manageEngine comp summary api request
+  api_url = f"https://endpointcentral.manageengine.com/api/1.4/inventory/compdetailssummary"
+    headers = {
+        "Authorization": f"Bearer {access_token}",
+        "Content-Type": "application/json",
+    }
+    params = {"resid": resource_id}
+
+    try:
+        response = requests.get(api_url, headers=headers, params=params, verify=True) #verify=False is not reccomended for production.
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        print(f"Error retrieving computer details: {e}")
+        if response is not None:
+          print(f"Response text: {response.text}")
+        return None
+    except ValueError as e:
+        print(f"Error decoding JSON: {e}")
+        if response is not None:
+          print(f"Response text: {response.text}")
+        return None
+
 '''
 
 
@@ -413,3 +436,4 @@ class IPAddressTracker:
   {"item_id": 3, "ip_address": "10.0.0.50"},
   // ... more items
 ]'''
+
