@@ -44,6 +44,7 @@ import numpy
         return None
 
 '''
+# pandas map to postgresal local then azure
 
 
 #---As of right now, the 1224 seating chart and 1224 analytics window opens first
