@@ -169,7 +169,7 @@ def numOfComps():
 
 #import ABoptions
 
-'''
+
   "name": "Lab 1224",
   "computer model": 7040/20,
   "number of computers": 26,
@@ -177,12 +177,12 @@ def numOfComps():
   "number of printers": 1,
   "projector model": "Dell 1510x", 
   "number of projectors": 1,
-'''
+
 
 lab1224data = {
    ABoptions    # stored as object  ONLY OPEN IF CLICKED. Right now it is opening BEFORE the mainTest code. 
 } 
-'''
+
 lab1225data = {
 
   "name": "Lab 1225",
@@ -193,7 +193,7 @@ lab1225data = {
   "projector model": "Dell 1510x", 
   "number of projectors": 1,
 } 
-
+'''
 
 
 
