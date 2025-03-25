@@ -90,6 +90,8 @@ container.grid_rowconfigure(0, weight=1)
 container.grid_columnconfigure(0, weight=1)
 self.geometry("1000x1000") 
 
+# data frame will loop thru JSON data as dict to format in sql/excel
+
     
 	
 # --------------Floor 12 Lab Dictionary Data---------------------------------------
