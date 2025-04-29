@@ -9,6 +9,7 @@ import numpy
 # API structure for ManageEngine: <Server URL>/api/{Version}/{Entity}/{Operation|Action}/<Resource>/<Filter>/<Page tags>/<Search tags>
 
 # combined function contains dynamically coded API requests, Pandas structuring, and export to SQL db and excel db
+# starts with single object then inherits
 
 ''' file structure
 ├── models/
