@@ -22,6 +22,8 @@ import numpy
 # powershell searchables for OS details
 # will match ManageENGINE SERIAL number API 
 
+# connects w/ pandas from both file sources
+
 # manageEngine comp summary api request
   api_url = f"https://endpointcentral.manageengine.com/api/1.4/inventory/compdetailssummary"
     headers = {
